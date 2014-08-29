@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# A twilio api gem
+gem 'twilio-ruby'
+
 # Use ActiveModel has_secure_password
 
 group :development do
