@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe SavedMsg, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "has necessary attributes" do
+    sm = SavedMsg.new(subject: "Goodbye", content: "Today is Friday - best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "6507044251")
+	expect(sm.subject).to eq("Goodbye")
+	expect(sm.content).to eq("Today is Friday - best day of the week!")
+	expect(sm.time).to eq("8:00AM 2014-AUG-29")
+	expect(sm.send_num).to eq("6507044251")
+  end
+
 end
