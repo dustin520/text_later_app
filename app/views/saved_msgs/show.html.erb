@@ -6,6 +6,10 @@
 		
 		<h1>Subject: <%= @savedMsg.subject %></h1>
 
+		<% flash.each do |name, msg| %>
+			<h2 id="<%= name %>"><%= msg %></h2>
+		<% end %> 
+
 			<p> Content: 
 				<%= @savedMsg.content %>
 			</p>
