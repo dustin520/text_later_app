@@ -35,17 +35,16 @@ class SavedMsgsController < ApplicationController
 	def edit
 		find_user_id
 		find_savedMsg
-		render :edit
 	end
 
 	def update
 		find_user_id
 		savedMsg_id = params[:id]
 		@savedMsg = @user.saved_msgs.find(savedMsg_id)
-
+		# binding.pry
 		updateMsg = params.require(:saved_msg).permit(:send_num, :subject, :content, :time)
-
-		@saved_msg.update_attributes(send_num: updateMsg[:send_num], subject: updateMsg[:subject], content: updateMsg[:content], time: updateMsg[:time])
+		# binding.pry
+		@savedMsg.update_attributes(send_num: updateMsg[:send_num], subject: updateMsg[:subject], content: updateMsg[:content], time: updateMsg[:time])
 
 		redirect_to user_saved_msgs_path
 	end
@@ -62,7 +61,7 @@ class SavedMsgsController < ApplicationController
 	private
 
 	def find_user_id
-		p params
+		p params 
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
 	end
