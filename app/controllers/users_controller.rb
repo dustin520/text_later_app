@@ -8,16 +8,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_info = params.require(:user).permit(:email, :phone_num)
-    User.create(user_info)
-			if @user
-  			session[:user_id] = @user.id
-      	redirect_to users_path, :notice => "You have just logged in!"
-  		else
-	      flash.now[:notice] = "Can't log you in"
-	      render :new
-			end
- 				redirect_to users_path
+    user_info = params.require(:user).permit(:email, :password, :phone_num)
+    @user = User.create(user_info)
+		if @user.errors.any?
+      puts "no user was created, why?!?"
+      flash.now[:notice] = "Can't log you in"
+      render :login
+		else
+      puts "a new user was created"
+      session[:user_id] = @user.id
+      redirect_to users_path, :notice => "You have just logged in!"
+		end
+		# redirect_to users_path
   end
 
   def show
