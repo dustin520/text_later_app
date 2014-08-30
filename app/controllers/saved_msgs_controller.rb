@@ -19,13 +19,11 @@ class SavedMsgsController < ApplicationController
 
 		message = @client.account.messages.create(:body => new_msg[:content],
 		    :to => new_msg[:send_num],     # Replace with your phone number
-		    :from => "+1454888381")   # Replace with your Twilio number
+		    :from => "+14154888381")   # Replace with your Twilio number
 		p message.sid
-		render plain: "sent"
-
 
 		@user.saved_msgs.create(new_msg)
-		redirect_to users_path, :notice => "Msg scheduled"
+		redirect_to '/'
 	end
 
 	def show
