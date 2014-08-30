@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_secure_password
+	has_secure_password # this is a test comment
 
 	validates :email, presence: true, uniqueness: {case_sensitive: false}
  	validates :phone_num, presence: true
