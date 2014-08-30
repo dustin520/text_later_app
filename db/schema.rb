@@ -16,11 +16,6 @@ ActiveRecord::Schema.define(version: 20140830042716) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "no_user_logons", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "saved_msgs", force: true do |t|
     t.string   "subject"
     t.text     "content"

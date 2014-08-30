@@ -14,10 +14,10 @@ hello1 = randall.saved_msgs.create({subject: "Hello", content: "Today is Friday 
 hello2 = dustin.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29"})
 hello3 = sana.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29"})
 
-unknown1 = No_user_logon.create({})
-unknown2 = No_user_logon.create({})
-unknown3 = No_user_logon.create({})
+# unknown1 = No_user_logon.create({})
+# unknown2 = No_user_logon.create({})
+# unknown3 = No_user_logon.create({})
 
-friday1 = unknown1.unsaved_msgs.create({email: "test1@ga.com", phone_num: "5162420285", subject: "goodbye", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "6507044251"})
-friday2 = unknown2.unsaved_msgs.create({email: "test2@ga.com", phone_num: "5162420285", subject: "goodbye", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "6509069549"})
-friday3 = unknown3.unsaved_msgs.create({email: "test3@ga.com", phone_num: "5162420285", subject: "goodbye", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "5102959333"})
+friday1 = UnsavedMsg.create({email: "test1@ga.com", phone_num: "5162420285", subject: "goodbye", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "6507044251"})
+friday2 = UnsavedMsg.create({email: "test2@ga.com", phone_num: "5162420285", subject: "goodbye", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "6509069549"})
+friday3 = UnsavedMsg.create({email: "test3@ga.com", phone_num: "5162420285", subject: "goodbye", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "5102959333"})

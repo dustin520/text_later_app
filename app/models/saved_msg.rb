@@ -1,5 +1,5 @@
 class SavedMsg < ActiveRecord::Base
 
-	belongs_to :no_user_logon
+	belongs_to :user
 
 end
