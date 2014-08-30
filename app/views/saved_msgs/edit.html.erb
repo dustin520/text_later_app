@@ -1,0 +1,28 @@
+
+
+<div class="container">
+	
+	<div>
+		
+		<%= form_for [@user, @savedMsg] do |f| %>
+			<p>
+				<%= f.text_field :send_num, placeholder: "change send to:", autofocus: true %>
+			</p>
+			<p>
+				<%= f.text_field :subject, placeholder: "edit subj" %>
+			</p><br>
+			<p>
+				<%= f.text_area :content, placeholder: "edit content" %>
+			</p><br>
+			<p>
+				<%= f.text_area :time, placeholder: "change when to send message" %>
+			</p>
+			<%= f.submit "Send" %>
+
+
+		<% end %>
+	</div>
+	
+
+
+</div>

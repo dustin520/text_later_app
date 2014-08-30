@@ -1,0 +1,26 @@
+
+<div class="container">
+	
+	<h1>Schedule a Text Message</h1>
+
+	<%= form_for [@user, @savedMsg] do |f| %>
+		<p>
+			<%= f.text_field :send_num, placeholder: "send to:", autofocus: true %>
+		</p>
+		<p>
+			<%= f.text_field :subject, placeholder: "subject" %>
+		</p><br>
+		<p>
+			<%= f.text_area :content, placeholder: "content" %>
+		</p><br>
+		<p>
+			<%= f.text_field :time, placeholder: "when to send message" %>
+		</p>
+		<%= f.submit "Send" %>
+
+	<% end %>
+
+	<a href="/users/<%= @user.id %>">Go back to User Page</a>
+
+
+</div>
