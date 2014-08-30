@@ -17,14 +17,14 @@ class UsersController < ApplicationController
 		else
       puts "a new user was created"
       session[:user_id] = @user.id
-      redirect_to users_path, :notice => "You have just logged in!"
+      redirect_to root_path, :notice => "You have just logged in!"
 		end
 		# redirect_to users_path
   end
 
   def show
     @user = User.find_by_id(params[:id])
-    @message = @user.savedmessages
+    # @message = @user.savedmessages
   end
 
   def edit
