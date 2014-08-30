@@ -13,6 +13,17 @@ class SavedMsgsController < ApplicationController
 	def create
 		find_user_id
 		new_msg = params[:saved_msg].permit(:send_num, :subject, :content, :time)
+		api_info
+
+		# binding.pry
+
+		message = @client.account.messages.create(:body => new_msg[:content],
+		    :to => new_msg[:send_num],     # Replace with your phone number
+		    :from => "+1454888381")   # Replace with your Twilio number
+		p message.sid
+		render plain: "sent"
+
+
 		@user.saved_msgs.create(new_msg)
 		redirect_to users_path, :notice => "Msg scheduled"
 	end
@@ -61,6 +72,13 @@ class SavedMsgsController < ApplicationController
 	def find_savedMsg
 		savedMsg_id = params[:id]
 		@savedMsg = @user.saved_msgs.find(savedMsg_id)
+	end
+
+	def api_info
+		# Get your Account Sid and Auth Token from twilio.com/user/account
+		account_sid = ENV['TWILIO_SID']
+		auth_token = ENV['TWILIO_AUTH']
+		@client = Twilio::REST::Client.new account_sid, auth_token
 	end
 
 
