@@ -5,7 +5,7 @@
 	<div>
 		<h1>Welcome to <%= @user.email %> Saved Msgs</h1>		
 
-			<%= @savedMsg.each do |msg| %>
+			<% @savedMsg.each do |msg| %>
 				<h3><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.subject %></a></h3><br>
 				<p><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.content %></a></p><br>
 

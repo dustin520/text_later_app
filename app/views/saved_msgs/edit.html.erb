@@ -2,6 +2,8 @@
 
 <div class="container">
 	
+	<h1>Edit Page</h1>
+
 	<div>
 		
 		<%= form_for [@user, @savedMsg] do |f| %>
@@ -17,7 +19,9 @@
 			<p>
 				<%= f.text_area :time, placeholder: "change when to send message" %>
 			</p>
-			<%= f.submit "Send" %>
+			<%= f.submit "Update" %>
+
+			<%=  button_to "Delete", user_saved_msg_path(@user.id, @savedMsg.id), method: :delete %>
 
 
 		<% end %>
