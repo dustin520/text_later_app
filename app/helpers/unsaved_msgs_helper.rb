@@ -1,0 +1,2 @@
+module UnsavedMsgsHelper
+end
