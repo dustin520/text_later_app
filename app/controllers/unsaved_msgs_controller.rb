@@ -16,8 +16,8 @@ class UnsavedMsgsController < ApplicationController
 		# binding.pry
 
 		# Keys for API
-		account_sid = ENV["TWILIO_SID"]
-	  auth_token = ENV["TWILIO_AUTH"]
+		account_sid = ENV['TWILIO_SID']
+	  auth_token = ENV['TWILIO_AUTH']
 
 	  # Reaching out to Twilio API
 		@client = Twilio::REST::Client.new account_sid, auth_token
