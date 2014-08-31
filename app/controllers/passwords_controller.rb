@@ -15,4 +15,8 @@ class PasswordsController < ApplicationController
 		# render text: "User has been reset"
 		redirect_to users_path, notice: "Email was sent with instructions"
 	end
+
+
+
+	
 end
