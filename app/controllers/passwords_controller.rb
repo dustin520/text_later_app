@@ -31,4 +31,8 @@ class PasswordsController < ApplicationController
 		end
 
 	end
+
+
+
+	
 end

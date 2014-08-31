@@ -1,0 +1,17 @@
+<div class="container">
+
+
+	<h1>Create a new Text for Unsaved_msg</h1>
+	<h1>Note: User is not logged in</h1>
+
+
+	<%= form_for @unsaved_msg do |f| %>
+		<%= f.telephone_field :send_num, placeholder: "Number to send to", class: "form-control" %>
+		<%= f.text_field :content, placeholder: "Message to send", class: "form-control" %>
+		<%= f.text_field :time, placeholder: "Time to Send", class: "form-control" %>
+		<%= f.submit "Text It", class: "btn btn-primary	" %>
+	<% end %>
+
+
+
+</div>

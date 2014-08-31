@@ -17,6 +17,9 @@ class SavedMsgsController < ApplicationController
 
 		# binding.pry
 
+		
+		
+		@client = Twilio::REST::Client.new account_sid, auth_token
 		message = @client.account.messages.create(:body => new_msg[:content],
 		    :to => new_msg[:send_num],     # Replace with your phone number
 		    :from => "+14154888381")   # Replace with your Twilio number
@@ -46,7 +49,7 @@ class SavedMsgsController < ApplicationController
 		# binding.pry
 		@savedMsg.update_attributes(send_num: updateMsg[:send_num], subject: updateMsg[:subject], content: updateMsg[:content], time: updateMsg[:time])
 
-		redirect_to user_saved_msgs_path
+		redirect_to user_saved_msg_path, :notice => "Scheduled Message Updated!"
 	end
 
 	def destroy
@@ -54,7 +57,7 @@ class SavedMsgsController < ApplicationController
 		find_savedMsg
 		@savedMsg.destroy
 
-		redirect_to user_saved_msgs_path, :notice => "scheduled text deleted"
+		redirect_to user_saved_msgs_path, :notice => "Scheduled Text Deleted!"
 	end
 
 
@@ -68,14 +71,13 @@ class SavedMsgsController < ApplicationController
 
 	def find_savedMsg
 		savedMsg_id = params[:id]
-		@savedMsg = @user.saved_msgs.find(savedMsg_id)
+		@savedMsg = SavedMsg.find_by_id(savedMsg_id)
 	end
 
 	def api_info
 		# Get your Account Sid and Auth Token from twilio.com/user/account
 		account_sid = ENV['TWILIO_SID']
 		auth_token = ENV['TWILIO_AUTH']
-		@client = Twilio::REST::Client.new account_sid, auth_token
 	end
 
 
