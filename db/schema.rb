@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140831001105) do
   create_table "saved_msgs", force: true do |t|
     t.string   "subject"
     t.text     "content"
-    t.string   "time"
+    t.datetime "time"
     t.boolean  "deliver"
     t.string   "send_num"
     t.integer  "user_id"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140831001105) do
     t.string   "phone_num"
     t.string   "subject"
     t.text     "content"
-    t.string   "time"
+    t.datetime "time"
     t.boolean  "deliver"
     t.string   "send_num"
     t.integer  "no_user_logon_id"

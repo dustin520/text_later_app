@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-randall = User.create({email: "randall@ga.com", phone_num: "4152987707", password: "password"})
-dustin = User.create({email: "dustin@ga.com", phone_num: "8189877898", password: "password"})
-sana = User.create({email: "sana@ga.com", phone_num: "5102094735", password: "password"})
+randall = User.create({email: "randall@ga.com", phone_num: "4152987707", password: "2014password"})
+dustin = User.create({email: "dustin@ga.com", phone_num: "8189877898", password: "2014password"})
+sana = User.create({email: "sana@ga.com", phone_num: "5102094735", password: "2014password"})
 
 hello1 = randall.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: Time.now.getutc})
 hello2 = dustin.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: Time.now.getutc})
