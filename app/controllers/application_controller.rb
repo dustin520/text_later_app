@@ -12,4 +12,7 @@ class ApplicationController < ActionController::Base
   	# use 'current user' if available or find the user by it's id.
   	@current_user ||= User.find_by(id: session[:user_id])
   end
+
+  
+
 end
