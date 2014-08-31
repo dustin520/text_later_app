@@ -8,7 +8,7 @@
 	<%= form_for @unsaved_msg do |f| %>
 		<%= f.telephone_field :send_num, placeholder: "Number to send to", class: "form-control" %>
 		<%= f.text_field :content, placeholder: "Message to send", class: "form-control" %>
-		<%= f.text_field :time, placeholder: "Time to Send", class: "form-control" %>
+		<%= f.datetime_select :time, default: Time.now, ampm: true %>
 		<%= f.submit "Text It", class: "btn btn-primary	" %>
 	<% end %>
 

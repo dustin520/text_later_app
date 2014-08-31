@@ -10,9 +10,9 @@ randall = User.create({email: "randall@ga.com", phone_num: "4152987707", passwor
 dustin = User.create({email: "dustin@ga.com", phone_num: "8189877898", password: "password"})
 sana = User.create({email: "sana@ga.com", phone_num: "5102094735", password: "password"})
 
-hello1 = randall.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29"})
-hello2 = dustin.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29"})
-hello3 = sana.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29"})
+hello1 = randall.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: Time.now.getutc})
+hello2 = dustin.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: Time.now.getutc})
+hello3 = sana.saved_msgs.create({subject: "Hello", content: "Today is Friday - Best day of the week!", time: Time.now.getutc})
 
 # unknown1 = No_user_logon.create({})
 # unknown2 = No_user_logon.create({})

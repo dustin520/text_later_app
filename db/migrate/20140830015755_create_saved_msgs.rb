@@ -3,7 +3,7 @@ class CreateSavedMsgs < ActiveRecord::Migration
     create_table :saved_msgs do |t|
       t.string :subject
       t.text :content
-      t.string :time
+      t.timestamp :time
       t.boolean :deliver
       t.string :send_num
       t.references :user
