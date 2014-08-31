@@ -31,6 +31,7 @@ class UnsavedMsgsController < ApplicationController
 				:body => new_message[:content]
 			)
 		end
+		
 
 		redirect_to '/'
 	end
