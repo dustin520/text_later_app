@@ -5,7 +5,7 @@ class CreateUnsavedMsgs < ActiveRecord::Migration
       t.string :phone_num
       t.string :subject
       t.text :content
-      t.string :time
+      t.timestamp :time
       t.boolean :deliver
       t.string :send_num
       t.references :no_user_logon
