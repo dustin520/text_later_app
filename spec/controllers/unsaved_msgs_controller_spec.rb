@@ -1,5 +1,13 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe UnsavedMsgsController, :type => :controller do
+RSpec.describe UnsavedMsgsController, :type => :controller do
 
-# end
+	describe "GET new" do
+		it "returns http success" do
+			get :new
+			expect(response).to be_success
+		end
+	end
+
+	
+end
