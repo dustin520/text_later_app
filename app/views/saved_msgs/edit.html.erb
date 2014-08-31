@@ -21,10 +21,11 @@
 			</p>
 			<%= f.submit "Update" %>
 
+		<% end %>
+
 			<%=  button_to "Delete", user_saved_msg_path(@user.id, @savedMsg.id), method: :delete %>
 
 
-		<% end %>
 	</div>
 	
 

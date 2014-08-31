@@ -68,7 +68,7 @@ class SavedMsgsController < ApplicationController
 
 	def find_savedMsg
 		savedMsg_id = params[:id]
-		@savedMsg = @user.saved_msgs.find(savedMsg_id)
+		@savedMsg = SavedMsg.find_by_id(savedMsg_id)
 	end
 
 	def api_info
