@@ -11,8 +11,24 @@ class PasswordsController < ApplicationController
   		 	user.set_password_reset
   		 	UserMailer.password_reset(user).deliver
 			end
+			# render text: "User has been reset"
+		redirect_to login_url, notice: "Email was sent with instructions"
+	end
 
-		# render text: "User has been reset"
-		redirect_to users_path, notice: "Email was sent with instructions"
+	def edit
+		# renders edit
+		@user = User.find_by_code(params[:id])
+	end
+
+	def update
+		@user = User.find_by_code(params[:id])
+
+		if @user
+      update_password = params.require(:user).permit(:password)
+      @user.update_attributes(:password => update_password[:password])
+			p "PASSWORD UPDATED"
+			redirect_to '/'
+		end
+
 	end
 end

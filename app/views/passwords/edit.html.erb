@@ -1,0 +1,7 @@
+<h2> Password Reset </h2>
+
+<%= form_for @user, :url => {:action => "update", :method => "put"} do |f| %>
+	<%= f.password_field :password, placeholder: "password" %><br>
+	<%= f.password_field :password_confirmation, placeholder: "confirm password"%><br>
+	<%= f.submit "Reset Password" %>
+<% end %>
