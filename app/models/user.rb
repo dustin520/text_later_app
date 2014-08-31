@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
 	has_secure_password # this is a test comment
+	
+	validates :email, presence: true, uniqueness: {case_sensitive: false}, :format => {:with => /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/, message: "please, enter a valid email"}
+	validates :password, :format => {:with => /\A\^[([a-z]|[A-Z])0-9_-]{6,15}$\z/, message: "must be at least 6 characters and include one number and one letter."}, on: :create
+
 
 	validates :email, presence: true, uniqueness: {case_sensitive: false}
  	validates :phone_num, presence: true
