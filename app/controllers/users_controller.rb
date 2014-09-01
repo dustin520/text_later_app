@@ -11,11 +11,11 @@ class UsersController < ApplicationController
     user_info = params.require(:user).permit(:email, :password, :phone_num)
     @user = User.create(user_info)
 		if @user.errors.any?
-      puts "no user was created, why?!?"
-      flash.now[:notice] = "Can't log you in"
-      render :login
+      # puts "no user was created, why?!?"
+      flash.now[:notice] = "Can't create a new user! Are you a human?"
+      render :new
 		else
-      puts "a new user was created"
+      # puts "a new user was created"
       session[:user_id] = @user.id
       redirect_to user_path, :notice => "You have just logged in!"
 		end

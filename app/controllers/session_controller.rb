@@ -19,7 +19,7 @@ class SessionController < ApplicationController
   def destroy
       session[:user_id] = nil
       # render text: "You've destroyed the session"
-      redirect_to '/'
+      redirect_to '/', notice: "You have successfully logged out!"
   end
 end
 
