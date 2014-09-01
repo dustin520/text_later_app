@@ -25,8 +25,8 @@ class UsersController < ApplicationController
   def show
     @current_user = current_user
     @user = User.find_by_id(params[:id])
-    # savedMsg_id = params[:id]
-    # @savedMsg = @user.saved_msgs.find(savedMsg_id)
+    savedMsg_id = params[:id]
+    @savedMsg = @user.saved_msgs.find(savedMsg_id)
     # @message = @user.savedmessages
   end
 
