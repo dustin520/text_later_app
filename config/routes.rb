@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   get '/login', to: 'session#new'
 
@@ -20,5 +22,8 @@ Rails.application.routes.draw do
   resources :passwords
 
   resources :unsaved_msgs
+
+
+  mount Sidekiq::Web => '/sidekiq'
 
 end
