@@ -8,7 +8,7 @@ class SessionController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to root_path, :notice => "User Logged in Successfully!"
+      redirect_to "/users", :notice => "User Logged in Successfully!"
     else
       flash.now[:notice] = "Can't log you in"
       render :new

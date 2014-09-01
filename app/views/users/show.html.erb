@@ -1,1 +1,17 @@
-show.html.erb
+<!-- user - show.html.erb -->
+
+<h1>User Dashboard (active session only)</h1>
+
+<div class="container">
+  <%= form_for @user do |f| %>
+    <h3 style="margin: -3px;">
+    <%= f.label :email, "#{@user.email}" %></br>
+
+    <% if @user.id == @current_user.id %>
+      <%= link_to "View All Your Messages", user_saved_msgs_path(@current_user) %>
+      <%= link_to "Send a New Message", new_user_saved_msg_path(@current_user) %>
+	</br></br>
+    <% end %>
+
+  <% end %>
+</div>
