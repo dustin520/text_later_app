@@ -14,16 +14,18 @@ class UnsavedMsgsController < ApplicationController
 		@text_message = UnsavedMsg.create(new_message)
 
 		# Change time to utc
-		time = @text_message.time
-		p "THE TIME TO SCHEDULE IS: #{time + 1*60}"
+		time = @text_message.time.utc
+		p "THE TIME TO SCHEDULE IS: #{time}"
 
 		if @text_message
 			if @text_message.time == nil
 				TwilioWorker.perform_async(@text_message.id)
 				p "TIME IS NIL!!!!"
 			elsif @text_message.time != nil
-				send_time = (time.min - Time.now.min).to_i
-				TwilioWorker.perform_at(send_time.minutes.from_now, @text_message.id)
+				start_time = Time.new(Time.now.year, Time.now.month,Time.now.day,Time.now.hour, Time.now.min)
+				end_time = Time.new(time.year, time.month, time.day, time.hour, time.min)
+				send_at = TimeDifference.between(start_time, end_time).in_minutes
+				TwilioWorker.perform_at(send_at.minutes.from_now, @text_message.id)
 			else
 				render plain: "SOMTHING WENT WRONG"
 			end
