@@ -1,3 +1,5 @@
+require('sidekiq/testing/inline')
+
 class ScheduleWorker
 	include Sidekiq::Worker
 	# sidekiq_options retry: false
@@ -7,7 +9,7 @@ class ScheduleWorker
 		friend = text.send_num
 		# friends = text.send_num.split(",")
 		p friend
-		# binding.pry
+		binding.pry
 		from = '+14154888381'
 		content = text.content
 
