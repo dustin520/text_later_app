@@ -14,15 +14,20 @@
       <a class="navbar-brand" href="/">Text Me Maybe</a>
     </div>
 	    <ul class="nav navbar-nav">
-        <li class="active"><a href="/users/<%= session[:user_id] %>">My Page</a></li>
+        <li class="active"><a href="/users">Users</a></li>
         <li class="divider"></li>
-        <li><a href="/users">Users</a></li>
-        <li class="divider"></li>
-        <li><a href="/users/<%= session[:user_id] %>/saved_msgs">Messages</a></li>
-        <li><a href="/users/<%= session[:user_id] %>/saved_msgs/new">Create New</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-        <li><a href="/login">Log In</a></li>
-        <li><a href="/logout">Log Out</a></li>
+          <% if session[:user_id] != nil %>
+            <li><a href="/users/<%= session[:user_id] %>">My Page</a></li>
+            <li class="divider"></li>
+            <li><a href="/users/<%= session[:user_id] %>/saved_msgs">Messages</a></li>
+            <li><a href="/users/<%= session[:user_id] %>/saved_msgs/new">Create New</a></li>
+          <% end %>
+          <% if session[:user_id] == nil %>
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/login">Log In</a></li>
+          <% elsif session[:user_id] != nil %>
+            <li><a href="/logout">Log Out</a></li>
+          <% end %>
       </ul>
 	</nav>
 </div>
