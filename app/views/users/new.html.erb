@@ -1,6 +1,4 @@
-
 <!-- users - new.html.erb -->
-
 
 <div class="container">
   <div class="row">
@@ -15,16 +13,16 @@
       <%= form_for(@user) do |f| %>
 
       <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email %><br/>
 
       <%= f.label :phone_num %>
-      <%= f.text_field :phone_num %>
+      <%= f.text_field :phone_num %><br/>
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password %><br/>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation %><br/><br/>
 
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>

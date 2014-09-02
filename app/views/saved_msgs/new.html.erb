@@ -1,26 +1,32 @@
 
 <div class="container">
-	
-	<h1>Schedule a Text Message</h1>
+	<div class='col-md-offset-4 col-md-4'>
+		<h1>Schedule a Text</h1>
+	</div>
 
-	<%= form_for [@user, @savedMsg] do |f| %>
-		<p>
-			<%= f.text_field :send_num, placeholder: "send to:", autofocus: true %>
-		</p>
-		<p>
-			<%= f.text_field :subject, placeholder: "subject" %>
-		</p><br>
-		<p>
-			<%= f.text_area :content, placeholder: "content" %>
-		</p><br>
-		<p>
-			<%= f.text_field :time, placeholder: "when to send message" %>
-		</p>
-		<%= f.submit "Send" %>
+	<div class="row">
+		<%= form_for [@user, @savedMsg] do |f| %>
+			<div class='col-md-offset-3 col-md-6'>
+				<%= f.telephone_field :send_num, placeholder: "send to:", autofocus: true, class: 'form-control' %>
+			</div>
+			<div class='col-md-offset-3 col-md-6'>
+				<%= f.text_field :subject, placeholder: "subject", class: 'form-control' %>
+			</div><br>
+			<div class='col-md-offset-3 col-md-6'>
+				<%= f.text_area :content, placeholder: "content", class: 'form-control' %>
+			</div><br>
+			<div class='col-md-offset-3 col-md-6'>
+				<%= f.submit "Text It", class: 'btn btn-primary form-control' %>
+			</div>
+			<div class='col-md-offset-4 col-md-4'>
+				<%= f.datetime_select :time, default: Time.now, ampm: true %>
+			</div>
+		<% end %>
+	</div>
 
-	<% end %>
+	<hr class="featurette-divider"/>
 
-	<a href="/users/<%= @user.id %>">Go back to User Page</a>
-
+	<a href="/users/<%= @user.id %>", class: 'btn btn-primary'>User Page</a> 
+	<%= link_to "Saved Messages", user_saved_msgs_url %>
 
 </div>

@@ -1,27 +1,81 @@
 
-
 <div class="container">
 
-	<h1>Welcome to <%= @user.email %> Saved Msgs</h1>	
+	<h1>Welcome to your Scheduled Messages!</h1>	
+	<h3>User: <%= @user.email %></h3>
 
 	<!-- Flash Messages -->
 	<% flash.each do |name, msg| %>
-		<h2 id="<%= name %>"><%= msg %></h2>
+		<h2 id="<%= name %>" style="color:red"><%= msg %></h2>
 	<% end %> 
 
+	<table class="table table-hover nav nav-tabs" role='tablist'>
+		
+		<!-- IN PROGRESS - TAB NAVIGAION  -->
+	  <!-- <li class="active"><a href="#">Home</a></li> -->
 
-	<% @savedMsg.each do |msg| %>
-		<h3><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.subject %></a></h3>
-		<p><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.content %></a></p>
-	<% end %>
+			<th class="row info active">
+				<td><strong>SUBJECT</strong></td>
+				<td><strong>MESSAGE</strong></td>
+				<td><strong>CREATED</strong></td>
+				<td><strong>SCHEDULED TIME</strong></td>
+				<td><strong>DELETE</strong></td>
+			</th>
+
+			<% @savedMsg.each do |msg| %>
+				<tr class="row">
+					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.subject %></a></td>
+					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.content %></a></td>
+					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.created_at.strftime("%a %l:%m %P %-m/%d/%y") %></a></td>
+					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.time.strftime("%a %l:%m %P %-m/%d/%y") %></a></td>
+					<td><%=  button_to "Delete", user_saved_msg_path(@user.id, msg.id), method: :delete, class: "form-control btn-xs btn-danger", :onclick => "confirm('Are you sure?')" %></td>
+				</tr>
+			<% end %>
+
+	  <!-- <li><a href="#">Messages</a></li> -->
+
+	</table>
 
 
+	<p><a class="btn btn-success" href="/users/<%= @user.id %>/saved_msgs/new">Schedule New Message</a></p>
+	<p><%=  button_to "Delete All", :url => {:action => "saved_msgs#destroyAll", method: :delete} %></p>
 
-
-
-
+	<hr class="featurette-divider"/>
 
 	<p><a href="/users/<%= @user.id %>">Go back to User Page</a></p>
 
-</div>
 
+		<h1>BUTTON BELOW NOT WORKING - UNABLE TO SUBMIT TO CREATE POST PATH</h1>
+			<!-- Button trigger modal -->
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		  Create New Message! 
+		</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title text-center" id="myModalLabel">Text It Later</h4>
+		      </div>
+		      <div class="modal-body">
+		        <%= form_for [@user, @savedMsgs] do |f| %>
+							<%= f.telephone_field :send_num, placeholder: "send to", class: "form-control" %>
+							<%= f.text_field :subject, placeholder: "subject", class:"form-control" %>
+							<%= f.text_field :content, placeholder: "what to say..", class: "form-control" %>
+							<%= f.datetime_select :time, default: Time.now, ampm: true, class:"form-control col-md-offset-2 col-md-3" %>
+							<%= f.submit "Schedule It", class: "form-control btn btn-primary" %>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <%= f.submit "Do it!", class: "btn btn-primary"%>
+						<% end %>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<hr class="featurette-divider"</hr>
+	
+</div>
