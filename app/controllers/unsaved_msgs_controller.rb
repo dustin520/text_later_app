@@ -30,7 +30,7 @@ class UnsavedMsgsController < ApplicationController
 				render plain: "SOMTHING WENT WRONG"
 			end
 
-			render plain: "OK, Text Message was saved"
+			render plain: "OK, Text Message was sent"
 
 		else
 			redirect_to '/'
