@@ -1,9 +1,36 @@
-<h1>Text Later App Front Page</h1>
+<div class="container">
+	<h1>Text Later App Front Page</h1>
 
 
-<p>Give the option to see all messages</p>
-<p>Give the option to create</p>
-<p>Give the option to edit</p>
+	<p>Give the option to see all messages</p>
+	<p>Give the option to create</p>
+	<p>Give the option to edit</p>
+	<hr class="featurette-divider">
 
-<p><%= link_to 'Monitoring Workers', sidekiq_web_path %></p>
+	<!-- This button only shows when user is not logged in.
+	 -->
+	<h3>Ready to Create a message?</h3>
+	<a href="javascript:void(0);" class="textIt btn btn-primary">Text It</a>
+
+
+	<div class="loading">
+		<%= image_tag "loader.GIF", style: "margin-top:20px; width:100px;"%>
+	</div>
+
+	<div class="sendText">	
+
+
+	</div>
+
+
+
+
+
+	<hr class="featurette-divider">
+
+	<!-- Need to hide this later -->
+	<p><%= link_to 'Monitoring Workers', sidekiq_web_path %></p>
+
+
+</div>  <!-- Container Close -->
 
