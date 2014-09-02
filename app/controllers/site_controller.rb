@@ -4,4 +4,9 @@ class SiteController < ApplicationController
 		@unsaved_msg = UnsavedMsg.new
 	end
 
+
+	def about
+		render :about	
+	end
+
 end

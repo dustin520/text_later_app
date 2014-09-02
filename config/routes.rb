@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   root 'site#index'
 
+  get '/about', to: 'site#about'
+
   resources :users do
     resources :saved_msgs
   end
