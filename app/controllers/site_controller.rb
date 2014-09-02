@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
 
-	def index		
+	def index	
+		@unsaved_msg = UnsavedMsg.new
 	end
 
 end

@@ -1,14 +1,15 @@
 
 $(document).ready(function(){
-	$(".loading").hide()
+	$(".loading").hide();
+	$(".sendText").hide();
 
 	function createText(){
-
+		return 
 	}
 
-	$(".textIt").on("click", function(e){
-		e.preventDefault()
-
+	$(".textit").on("submit", function(e){
+		e.preventDefault();
+		$(".loading").show();
 	})
 
 
