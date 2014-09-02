@@ -9,9 +9,14 @@
 		<% end %>
 
 		<%= form_for :user do |f| %>
-			<%= f.text_field :email, placeholder: "Enter your email" %> <br>
-			<%= f.password_field :password, placeholder: "password" %><br>
-			<%= f.submit "Login" %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email, placeholder: "Enter your email" %> <br/>
+
+			<%= f.label :password %>
+			<%= f.password_field :password, placeholder: "password" %><br/><br/>
+			
+			<%= f.submit "Login", class: "btn btn-large btn-primary" %><br/>
 		<% end %>
 		
 	<h3> <%= link_to "Forget Password?", new_password_path %> </h3>
