@@ -14,7 +14,8 @@
       <a class="navbar-brand" href="/">Text Me Maybe</a>
     </div>
 	    <ul class="nav navbar-nav">
-        <li class="active"><a href="/users">Users</a></li>
+        <li class="active"><a href="/about">About</a></li>
+        <li><a href="/users">Users</a></li>
         <li class="divider"></li>
           <% if session[:user_id] != nil %>
             <li><a href="/users/<%= session[:user_id] %>">My Page</a></li>
