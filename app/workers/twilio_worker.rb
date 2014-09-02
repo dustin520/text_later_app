@@ -4,7 +4,6 @@ class	TwilioWorker
 
   def perform(text_message_id)
   	text_message = UnsavedMsg.find(text_message_id)
-  	number_to_send_to = text_message.send_num
   	from = '+14154888381'
   	content = text_message.content
 
@@ -13,15 +12,19 @@ class	TwilioWorker
 	  auth_token = ENV['TWILIO_AUTH']
 	  from = '+14154888381'
 
+  	to = text_message.send_num.split(",")
+  	puts "THIS IS OUR ARRAY!"
+
 	  # Reaching out to Twilio API
-
 		@client = Twilio::REST::Client.new account_sid, auth_token
-		@client.account.messages.create(
-			:from => from, 
-			:to => number_to_send_to, 
-			:body => content
-		)
-
+  	
+  	to.each do |friend|
+			@client.account.messages.create(
+				:from => from, 
+				:to => friend, 
+				:body => content
+			)
+		end
 
 
 
