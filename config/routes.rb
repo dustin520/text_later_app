@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   post 'session/destroy', to: 'session#destroy' 
 
+  delete '/users/:user_id/saved_msgs', to: 'saved_msgs#destroyAll'
+
   get "/logout" => "session#destroy" #TODO: DELETE THIS BEFORE PRODUCTION
 
   root 'site#index'

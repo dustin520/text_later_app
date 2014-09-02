@@ -19,6 +19,7 @@
 				<td><strong>MESSAGE</strong></td>
 				<td><strong>CREATED</strong></td>
 				<td><strong>SCHEDULED TIME</strong></td>
+				<td><strong>DELETE</strong></td>
 			</th>
 
 			<% @savedMsg.each do |msg| %>
@@ -27,6 +28,7 @@
 					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.content %></a></td>
 					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.created_at %></a></td>
 					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.time %></a></td>
+					<td><%=  button_to "Delete", user_saved_msg_path(@user.id, msg.id), method: :delete, class: "form-control btn-xs btn-danger", :onclick => "alert('Are you sure?')" %></td>
 				</tr>
 			<% end %>
 
@@ -36,7 +38,8 @@
 
 
 	<p><a class="btn btn-success" href="/users/<%= @user.id %>/saved_msgs/new">Schedule New Message</a></p>
-	
+	<p><%=  button_to "Delete All", :url => {:action => "saved_msgs#destroyAll", method: :delete} %></p>
+
 	<hr class="featurette-divider"/>
 
 	<p><a href="/users/<%= @user.id %>">Go back to User Page</a></p>

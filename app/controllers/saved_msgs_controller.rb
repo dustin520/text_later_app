@@ -8,7 +8,7 @@ class SavedMsgsController < ApplicationController
 			find_user_id
 			@savedMsg = @user.saved_msgs.all
 		else
-			redirect_to user_saved_msgs_path(session_id)
+			redirect_to user_saved_msgs_path(session_id) 
 		end
 	end
 
@@ -49,10 +49,10 @@ class SavedMsgsController < ApplicationController
 					delay = TimeDifference.between(start, finish).in_minutes
 
 					# to add multiple recipients - NOT Working ! FIX
-					friends = new_msg[:send_num].split(",")
-					friends.each do |friend|
+					# friends = new_msg[:send_num].split(",")
+					# friends.each do |friend|
 						ScheduleWorker.perform_at(delay.minutes.from_now, @text.id)
-					end
+					# end
 				else 
 					render plain: "What's wrong now? Something MUST Be FIXED!"
 				end
@@ -82,6 +82,7 @@ class SavedMsgsController < ApplicationController
 		# 		    :body => content)   # Replace with your Twilio number
 		# 			p message.sid
 		# 	end # twilio magic ends 
+		# 	redirect_to user_saved_msgs_path
 
 		else
 			# redirect_to new_user_saved_msg_path(session_id)
@@ -146,6 +147,14 @@ class SavedMsgsController < ApplicationController
 			redirect_to user_saved_msgs_path(session_id)
 		end		
 	end
+
+	# def destroyAll
+	# 	if session_id.to_i == route_id.to_i
+	# 		find_user_id
+	# 		find_savedMsg
+	# 		@user.savedMsgs.destroy_all
+	# 		redirect_to user_saved_msgs_path, :notice => "All Messages DELETED!"
+	# end
 
 
 	private
