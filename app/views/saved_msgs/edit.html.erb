@@ -2,28 +2,33 @@
 
 <div class="container">
 	
-	<h1>Edit Page</h1>
+	<div class='col-md-offset-3 col-md-6'>
+		<h1>Edit Scheduled Message</h1>
+	</div>
 
 	<div>
 		
 		<%= form_for [@user, @savedMsg] do |f| %>
-			<p>
-				<%= f.text_field :send_num, placeholder: "change send to:", autofocus: true %>
-			</p>
-			<p>
-				<%= f.text_field :subject, placeholder: "edit subj" %>
-			</p><br>
-			<p>
-				<%= f.text_area :content, placeholder: "edit content" %>
-			</p><br>
-			<p>
-				<%= f.text_area :time, placeholder: "change when to send message" %>
-			</p>
-			<%= f.submit "Update" %>
-
+			<div class='col-md-offset-3 col-md-6'>
+				<%= f.text_field :send_num, placeholder: "change send to:", autofocus: true, class:"form-control" %>
+			</div>
+			<div class='col-md-offset-3 col-md-6'>
+				<%= f.text_field :subject, placeholder: "edit subj", class:"form-control" %>
+			</div><br>
+			<div class='col-md-offset-3 col-md-6'>
+				<%= f.text_area :content, placeholder: "edit content", class:"form-control" %>
+			</div><br>
+			<div class='col-md-offset-4 col-md-4'>
+				<%= f.datetime_select :time, default: Time.now, ampm: true %>
+			</div>
+			<div class='col-md-offset-3 col-md-6'>
+				<%= f.submit "Update", class: "form-control btn btn-primary" %>
+			</div>
+			<div class='col-md-offset-3 col-md-6'>
+				<%=  button_to "Delete", user_saved_msg_path(@user.id, @savedMsg.id), method: :delete, class: "form-control btn btn-danger" %>
+			</div>
 		<% end %>
 
-			<%=  button_to "Delete", user_saved_msg_path(@user.id, @savedMsg.id), method: :delete %>
 
 
 	</div>

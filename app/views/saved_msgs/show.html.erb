@@ -2,23 +2,80 @@
 
 
 <div class="container">
-	<div>
+	<div class="jumbotron">
 		
-		<h1>Subject: <%= @savedMsg.subject %></h1>
+		<h2>Subject: <%= @savedMsg.subject %></h2>
 
-		<% flash.each do |name, msg| %>
-			<h2 id="<%= name %>"><%= msg %></h2>
-		<% end %> 
+			<% flash.each do |name, msg| %>
+				<h3 id="<%= name %>" style="color:green"><%= msg %></h3>
+			<% end %> 
 
-			<p> Content: 
+			<div> Message: 
 				<%= @savedMsg.content %>
-			</p>
+			</div>
 
-			<p>Sent to: 
+			<div>Sent to: 
 				<%= @savedMsg.send_num %>
-			</p>
+			</div>
 
-		<a href="/users/<%= @user.id %>/saved_msgs/<%= @savedMsg.id %>/edit">Edit or Delete</a>
+			<% if @savedMsg.created_at != @savedMsg.updated_at %>
+				<div>Edited Date: 
+					<%= @savedMsg.updated_at %>
+				</div>
+			<% else %>
+				<div>Created Date: 
+					<%= @savedMsg.created_at %>
+				</div>
+			<% end %>
+
+			<div>Scheduled Date: 
+				<%= @savedMsg.time %>
+			</div>
+
+			<div>Delivered?: 
+				<%= @savedMsg.deliver %>
+			</div>
+
+		<a class="btn btn-warning" href="/users/<%= @user.id %>/saved_msgs/<%= @savedMsg.id %>/edit">Edit or Delete</a><br>
+		<%= link_to "Create New Message", new_user_saved_msg_path, class: "btn btn-success" %><br>
+
+
+
+		<!-- Button trigger modal -->
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		  Edit or Delete
+		</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title text-center" id="myModalLabel">Text It Later</h4>
+		      </div>
+		      <div class="modal-body">
+		        <%= form_for [@user, @savedMsg] do |f| %>
+							<%= f.telephone_field :send_num, placeholder: "change send to", class: "form-control" %>
+							<%= f.text_field :subject, placeholder: "edit subj", class:"form-control" %>
+							<%= f.text_field :content, placeholder: "edit message", class: "form-control" %>
+							<%= f.datetime_select :time, default: Time.now, ampm: true %>
+							<%= f.submit "Update", class: "form-control btn btn-primary" %>
+							<%=  button_to "Delete", user_saved_msg_path(@user.id, @savedMsg.id), method: :delete, class: "form-control btn btn-danger" %>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <%= f.submit "Update", class: "btn btn-primary"%>
+						<% end %>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<hr class="featurette-divider"</hr>
+
+		<%= link_to "Go to User page", user_path(@savedMsg.user_id) %> <br>
+		<%= link_to "Go to Saved Messages", user_saved_msgs_url(@savedMsg.user_id) %>
 
 	</div>
 </div>

@@ -30,19 +30,61 @@ class SavedMsgsController < ApplicationController
 		
 		if session_id.to_i == route_id.to_i
 			find_user_id
-			new_msg = params[:saved_msg].permit(:send_num, :subject, :content, :time)
-			api_info
-			# binding.pry
-			@client = Twilio::REST::Client.new account_sid, auth_token
-			message = @client.account.messages.create(:body => new_msg[:content],
-			    :to => new_msg[:send_num],     # Replace with your phone number
-			    :from => "+14154888381")   # Replace with your Twilio number
-			p message.sid
 
-			@user.saved_msgs.create(new_msg)
-			redirect_to user_saved_msgs_path(session_id)
+			new_msg = params[:saved_msg].permit(:send_num, :subject, :content, :time)
+			@text = @user.saved_msgs.create(new_msg)
+
+			# Change to UTC time 
+			time = @text.time.utc
+			p "Time to Schedule: #{time}"
+
+			# Sidekiq/Redis Magic w/ Twilio 
+			if @text
+				if @text.time == nil
+					ScheduleWorker.perform_async(@text.id) # passed in as arg for message_id
+					p "time is nil!"
+				elsif @text.time != nil
+					start = Time.new(Time.now.year, Time.now.month, Time.now.day, Time.now.hour, Time.now.min)
+					finish = Time.new(time.year, time.month, time.day, time.hour, time.min)
+					delay = TimeDifference.between(start, finish).in_minutes
+
+					# to add multiple recipients - NOT Working ! FIX
+					friends = new_msg[:send_num].split(",")
+					friends.each do |friend|
+						ScheduleWorker.perform_at(delay.minutes.from_now, @text.id)
+					end
+				else 
+					render plain: "What's wrong now? Something MUST Be FIXED!"
+				end
+				# render plain: "Your message was sent!"
+				redirect_to user_saved_msgs_path(session_id)
+			end
+
+
+		# # Twilio Magic w/o Sidekiq/Redis - MULITIPLE RECIPIENTS WORKING
+		# 	sender = "+14154888381"
+		# 	receiver = new_msg[:send_num]
+		# 	content = new_msg[:content]
+
+		# 	# api_info
+		# 	account_sid = ENV['TWILIO_SID']
+		# 	auth_token = ENV['TWILIO_AUTH']
+
+		# 	# Multiple Recipients
+		# 	friends = new_msg[:send_num].split(",")
+
+		# 	# binding.pry
+		# 	friends.each do |friend|
+		# 		@client = Twilio::REST::Client.new account_sid, auth_token
+		# 		message = @client.account.messages.create(
+		# 		    :from => sender,
+		# 		    :to => friend,     # Replace with your phone number
+		# 		    :body => content)   # Replace with your Twilio number
+		# 			p message.sid
+		# 	end # twilio magic ends 
+
 		else
-			redirect_to new_user_saved_msg_path(session_id)
+			# redirect_to new_user_saved_msg_path(session_id)
 		end
 	end
 
