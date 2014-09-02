@@ -7,6 +7,7 @@ class SavedMsgsController < ApplicationController
 		if session_id.to_i == route_id.to_i
 			find_user_id
 			@savedMsg = @user.saved_msgs.all
+			@savedMsgs = @user.saved_msgs.new
 		else
 			redirect_to user_saved_msgs_path(session_id) 
 		end

@@ -20,16 +20,16 @@
 
 			<% if @savedMsg.created_at != @savedMsg.updated_at %>
 				<div>Edited Date: 
-					<%= @savedMsg.updated_at %>
+					<%= @savedMsg.updated_at.strftime("%a %l:%m%P %-m/%d/%y")  %>
 				</div>
 			<% else %>
 				<div>Created Date: 
-					<%= @savedMsg.created_at %>
+					<%= @savedMsg.created_at.strftime("%a %l:%m%P %-m/%d/%y")  %>
 				</div>
 			<% end %>
 
 			<div>Scheduled Date: 
-				<%= @savedMsg.time %>
+				<%= @savedMsg.time.strftime("%a %l:%m%P %-m/%d/%y") %>
 			</div>
 
 			<div>Delivered?: 
@@ -59,7 +59,7 @@
 							<%= f.telephone_field :send_num, placeholder: "change send to", class: "form-control" %>
 							<%= f.text_field :subject, placeholder: "edit subj", class:"form-control" %>
 							<%= f.text_field :content, placeholder: "edit message", class: "form-control" %>
-							<%= f.datetime_select :time, default: Time.now, ampm: true %>
+							<%= f.datetime_select :time, default: Time.now, ampm: true, class:"form-control col-md-offset-2 col-md-3" %>
 							<%= f.submit "Update", class: "form-control btn btn-primary" %>
 							<%=  button_to "Delete", user_saved_msg_path(@user.id, @savedMsg.id), method: :delete, class: "form-control btn btn-danger" %>
 		      </div>
