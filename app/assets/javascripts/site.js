@@ -3,13 +3,28 @@ $(document).ready(function(){
 	$(".loading").hide();
 	$(".sendText").hide();
 
-	function createText(){
-		return 
-	}
+	$(".yobutton").on("click", function(){
+		$(".content-body").val("Yo!");
+	})
 
-	$(".textit").on("submit", function(e){
-		e.preventDefault();
-		$(".loading").show();
+	$(".birthdaybutton").on("click", function(){
+		$(".content-body").val("Happy Birthday!")
+	})
+
+	$(".xmasbutton").on("click", function(){
+		$(".content-body").val("Merry Christmas!")
+	})
+
+	$(".reminderbutton").on("click", function(){
+		$(".content-body").val("Don't Forget!")
+	})
+
+	$(".thinkbutton").on("click", function(){
+		$(".content-body").val("Thinking of you right now.")
+	})
+
+	$(".dogbutton").on("click", function(){
+		$(".content-body").val("Walk the dog.")
 	})
 
 

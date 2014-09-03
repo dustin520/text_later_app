@@ -30,9 +30,12 @@
 	        <h4 class="modal-title text-center" id="myModalLabel">Text It Later</h4>
 	      </div>
 	      <div class="modal-body">
-	        <%= form_for @unsaved_msg, class: "texttit" do |f| %>
+	      	
+	      	<%= render "shared/templates" %>
+
+	        <%= form_for @unsaved_msg do |f| %>
 						<%= f.telephone_field :send_num, placeholder: "Number to send to", class: "form-control" %>
-						<%= f.text_field :content, placeholder: "Message to send", class: "form-control" %>
+						<%= f.text_field :content, placeholder: "Message to send", class: "content-body form-control" %>
 						<%= f.datetime_select :time, default: Time.now, ampm: true %>
 	      </div>
 	      <div class="modal-footer">
