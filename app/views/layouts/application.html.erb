@@ -29,25 +29,21 @@
           <% end %>
           <% if session[:user_id] == nil %>
             <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/login">Log In</a></li>
+            <!-- <li><a href="/login">Log In</a></li> -->
 
             <li class="divider-vertical"></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
               <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                <%= form_for :user, :url => login_path do |f| %>
-                  <%= f.text_field :email, placeholder: "Enter your email" %> <br>
-                  <%= f.password_field :password, placeholder: "password" %><br>
-                  <%= f.submit "Login", class: "btn btn-large btn-primary" %>
+                  <!-- Login form here -->
+                  <%= form_for :user, :url => login_path do |f| %>
+                  <%= f.text_field :email, placeholder: "Enter your email" %> <br><br>
+                  <%= f.password_field :password, placeholder: "Password" %><br><br>
+                  <%= f.submit "Login", class: "btn btn-large btn-primary" %><br>
+                <h4> <%= link_to "Forgot Password?", new_password_path %> </h4>
                 <% end %>
-
-
-                <!-- Login form here -->
               </div>
             </li>
-
-
-
 
 
           <% elsif session[:user_id] != nil %>
