@@ -15,8 +15,3 @@
  *= require "font-awesome.min.css"
  *= require_self
  */
-
-
-.navbar-brand{
-	padding-top: 7px;
-}
