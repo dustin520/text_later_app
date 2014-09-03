@@ -4,10 +4,10 @@
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
           <h1 class="text-center">Sign Up</sh1>
       </div>
-      <div class="modal-body">
+      <div class="signupmodal-body">
           <form class="form col-md-12 center-block">
             <div class="form-group">
           
@@ -32,11 +32,11 @@
             <div class="form-group">
               <%= f.password_field :password_confirm, placeholder: "Confirm password", class: "form-control input-lg" %>
             </div>
-            <% end %>
         
-          <div class="form-group">
-            <input type="submit" value="Sign up!" class="btn btn-primary btn-lg btn-cust">
+          <div class="modal-footer">
+            <%= f.submit "Sign Up", class: "btn btn-primary form-control"%>
           </div>
+            <% end %>
               <span class="pull-right"><a href="/">Go home</a></span>
               <span><a href="/login">Login</a></span>
           </div>
