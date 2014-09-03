@@ -18,10 +18,9 @@
     </div>
 	    <ul class="nav navbar-nav">
         <li class="active"><a href="/about">About</a></li>
-        <li><a href="/users">Users</a></li>
+        <li><a href="/users">Friends</a></li>
         <li class="divider"></li>
           <% if session[:user_id] != nil %>
-            <li><a href="/users/<%= session[:user_id] %>">My Page</a></li>
             <li><a href="/users/<%= session[:user_id] %>/contacts">Contacts</a></li>
             <li class="divider"></li>
             <li><a href="/users/<%= session[:user_id] %>/saved_msgs">Messages</a></li>
@@ -33,7 +32,7 @@
 
             <li class="divider-vertical"></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
+              <a class="dropdown-toggle navbar-right" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
               <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                   <!-- Login form here -->
                   <%= form_for :user, :url => login_path do |f| %>
@@ -46,7 +45,8 @@
             </li>
 
           <% elsif session[:user_id] != nil %>
-            <li><a href="/logout">Log Out</a></li>
+            <li><a href="/users/<%= session[:user_id] %>">My Page</a></li>
+            <li class="navbar-right"><a href="/logout">Log Out</a></li>
           <% end %>
       </ul>
 	</nav>

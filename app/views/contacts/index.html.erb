@@ -1,16 +1,31 @@
-<h1>Contacts#index</h1>
-<p>Find me in app/views/contacts/index.html.erb</p>
+
 
 
 <div class="container">
 	<div class="row">
+		<h1 class="page-header col-md-3">Contacts</h1>
+		<a href="/users/<%= @user.id %>/contacts/new" class="btn btn-primary col-md-offset-6 col-md-2" style="margin-top:40px">Add Contact</a>		
+	</div>
+
+			<!-- Flash Messages -->
+		<% flash.each do |name, msg| %>
+			<h2 id="<%= name %>" style="color:green"><%= msg %></h2>
+		<% end %> 
+
+	<div class="row col-md-4">
 		
-	<% @contacts.each do |contact| %>
-		<div class="row">
-			<a href="/users/<%= @user.id %>/contacts/<%= contact.id %>"><%= contact.first_name + " " + contact.last_name %></a>
-			<a href="/users/<%= @user.id %>/contacts/<%= contact.id %>"><%= contact.phone_num %></a>
-		</div>
-	<% end %>
+		<% @contacts.each do |contact| %>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title"><a href="/users/<%= @user.id %>/contacts/<%= contact.id %>"><%= contact.first_name + " " + contact.last_name %></a></h3>
+			  </div>
+			  <div class="panel-body">
+			    <a href="/users/<%= @user.id %>/contacts/<%= contact.id %>">P: <%= contact.phone_num %></a>
+			    <%=  button_to "Delete", user_contact_path(@user.id, contact.id), method: :delete, class: "btn-sm btn-danger col-md-offset-7 col-md-3" %>
+			  </div>
+			</div>
+		<% end %>
+
 
 	</div>
 </div>
