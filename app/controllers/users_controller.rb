@@ -1,6 +1,7 @@
   class UsersController < ApplicationController
  	def index
     @users = User.all
+    p @users
     user_name
 	end
 

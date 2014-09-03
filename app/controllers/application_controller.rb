@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
   end
 
   def user_name
-    @user_name = User.find(session[:user_id])
+    @user_name = User.find(session[:user_id]) if session[:user_id] != nil
+    
   end
 
 end
