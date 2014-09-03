@@ -1,0 +1,18 @@
+
+
+
+<div class="container">
+	<div class="jumbotron">
+		
+		<h2>Contact: <%= @contact.first_name %> <%= @contact.last_name %></h2>
+
+			<% flash.each do |name, msg| %>
+				<h3 id="<%= name %>" style="color:green"><%= msg %></h3>
+			<% end %> 
+
+			<div> Phone: 
+				<%= @contact.phone_num %>
+			</div>
+
+	</div>
+</div>

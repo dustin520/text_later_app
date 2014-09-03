@@ -40,7 +40,7 @@
 					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.content %></a></td>
 					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.created_at.strftime("%a %l:%m %P %-m/%d/%y") %></a></td>
 					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.time.strftime("%a %l:%m %P %-m/%d/%y") %></a></td>
-					<td><%=  button_to "Delete", user_saved_msg_path(@user.id, msg.id), method: :delete, class: "form-control btn-xs btn-danger", :onclick => "confirm('Are you sure?')" %></td>
+					<td><%=  button_to "Delete", user_saved_msg_path(@user.id, msg.id), method: :delete, class: "form-control btn-xs btn-danger"%></td>
 				</tr>
 			<% end %>
 
