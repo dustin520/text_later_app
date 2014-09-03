@@ -31,5 +31,9 @@ $(document).ready(function(){
 		$(".subject-body").val("Dog Activity");
 	});
 
+$('#textButton').click(function () {
+    var btn = $(this)
+    btn.button('loading')
+  });
 
 });

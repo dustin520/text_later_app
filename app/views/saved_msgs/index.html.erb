@@ -83,12 +83,14 @@
 						<div class="form_element col-md-offset-2">
 							<%= f.datetime_select :time, default: Time.now, ampm: true, class: "form-control" %>
 						</div>
-			      <div class="modal-footer ">
-							<%= f.submit "Text It", class: "form-control btn btn-primary" %>
-							<% end %>
+			      <div class="modal-footer">
+							<button type="submit" id="textButton" data-loading-text="Sending..." class="btn btn-primary form-control">Text It
+							</button>
 			      </div>
+							<% end %>
 		    </div>
 		  </div>
 		</div>
+		<div></div>
 	
 </div>
