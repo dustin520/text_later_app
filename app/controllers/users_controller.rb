@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+  class UsersController < ApplicationController
  	def index
     @users = User.all
     user_name
@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    user_name
+    # user_name
   end
 
   def create
