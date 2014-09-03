@@ -1,3 +1,10 @@
 // Place all the styles related to the savedMsgs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.savesend {
+	float: right;
+	color: black;
+}
