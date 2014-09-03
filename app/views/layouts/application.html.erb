@@ -42,12 +42,9 @@
                 <h4> <%= link_to "Forgot Password?", new_password_path %> </h4>
                 <% end %>
               </div>
-            </li>
-
-
           <% elsif session[:user_id] != nil %>
             <li><a href="/users/<%= session[:user_id] %>">My Page</a></li>
-            <li class="navbar-right"><a href="/logout">Log Out</a></li>
+            <li class="navbar-right pull-right"><a href="/logout">Log Out</a></li>
           <% end %>
       </ul>
 	</nav>

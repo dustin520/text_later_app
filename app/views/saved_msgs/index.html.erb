@@ -71,16 +71,22 @@
 						<%= render "shared/templates" %>
 
 		        <%= form_for [@user, @savedMsgs] do |f| %>
-							<%= f.telephone_field :send_num, placeholder: "Send To", class: "form-control text-center" %>
-							<%= f.text_field :subject, placeholder: "Subject", class: "form-control text-center subject-body" %>
-							<%= f.text_field :content, placeholder: "Message", class: "form-control text-center content-body" %>
-						<span class="form_element" style="margin-right:-25%">
+		        	<div>
+								<%= f.telephone_field :send_num, placeholder: "Send To", class: "form-control text-center" %>		        		
+		        	</div>
+		        	<div>
+								<%= f.text_field :subject, placeholder: "Subject", class: "form-control text-center subject-body" %>
+		        	</div>
+		        	<div>
+								<%= f.text_field :content, placeholder: "Message", class: "form-control text-center content-body" %>		        		
+		        	</div>
+						<div class="form_element col-md-offset-2">
 							<%= f.datetime_select :time, default: Time.now, ampm: true, class: "form-control" %>
-						</span>
-		      <div class="modal-footer">
+						</div>
+			      <div class="modal-footer ">
 							<%= f.submit "Text It", class: "form-control btn btn-primary" %>
-						<% end %>
-		      </div>
+							<% end %>
+			      </div>
 		    </div>
 		  </div>
 		</div>
