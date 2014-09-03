@@ -21,3 +21,8 @@ hello3 = sana.saved_msgs.create({subject: "Hello", content: "Today is Friday - B
 friday1 = UnsavedMsg.create({email: "test1@ga.com", phone_num: "5162420285", subject: "goodbye", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "6507044251"})
 friday2 = UnsavedMsg.create({email: "test2@ga.com", phone_num: "5162420285", subject: "goodbye", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "6509069549"})
 friday3 = UnsavedMsg.create({email: "test3@ga.com", phone_num: "5162420285", subject: "goodbye", content: "Today is Friday - Best day of the week!", time: "8:00AM 2014-AUG-29", send_num: "5102959333"})
+
+
+friend = dustin.contacts.create({first_name: "Jerry", last_name: "Wong", phone_num: "23478900983"})
+friend2 = dustin.contacts.create({first_name: "Daniel", last_name: "Lau", phone_num: "19803748979"})
+# test = Contacts.create({first_name: "Harry", last_name: "Lee", phone_num: "1923807487"})

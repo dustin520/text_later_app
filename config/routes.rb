@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+
   get '/login', to: 'session#new'
 
   post '/login', to: 'session#create'
@@ -21,9 +22,11 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :saved_msgs
+    resources :contacts
   end
 
   resources :passwords
+
 
   resources :unsaved_msgs
 
