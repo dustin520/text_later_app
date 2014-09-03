@@ -30,6 +30,26 @@
           <% if session[:user_id] == nil %>
             <li><a href="/signup">Sign Up</a></li>
             <li><a href="/login">Log In</a></li>
+
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+              <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                <%= form_for :user, :url => login_path do |f| %>
+                  <%= f.text_field :email, placeholder: "Enter your email" %> <br>
+                  <%= f.password_field :password, placeholder: "password" %><br>
+                  <%= f.submit "Login", class: "btn btn-large btn-primary" %>
+                <% end %>
+
+
+                <!-- Login form here -->
+              </div>
+            </li>
+
+
+
+
+
           <% elsif session[:user_id] != nil %>
             <li><a href="/logout">Log Out</a></li>
           <% end %>
