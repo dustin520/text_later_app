@@ -1,7 +1,5 @@
 
 $(document).ready(function(){
-	$(".loading").hide();
-	$(".sendText").hide();
 
 	$(".yobutton").on("click", function(){
 		$(".content-body").val("Don't forget to come to Cameron's Potluck!  Bring your food!");
