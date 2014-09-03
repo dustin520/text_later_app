@@ -3,5 +3,32 @@
 	font-size: 20px;
 }
 
+/*For Top Background Image*/
+#topbackground{
+  background:url('http://xn--80aqafcrtq.cc/img/7/9/0/79048.jpg') no-repeat center center fixed;
+  height: 600px;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+/*.navbar-inverse {
+	background-color: transparent;
+	background: transparent;
+	border-color: transparent;
+	padding-top: 40px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: white;
+	font-size: 20px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	border-bottom: 2px solid #fff;
+}
+*/
+
 
 

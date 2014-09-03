@@ -1,51 +1,16 @@
-<div id="">	
-</div>
+<!-- 1/3 HOMEPAGE BEGINS -->
+<div id="topbackground"> 
 
-<div class="container">
-	<h1 class="page-header">Text Me Maybe <small><i>No more excuses, text now deliver later!</i></small></h1>
+	<div class="container">
+		<h1 class="page-header">Text Me Maybe <small><i>No more excuses, text now deliver later!</i></small></h1>
 
-	<!-- This button only shows when user is not logged in.
-	 -->
-	<% if session[:user_id] == nil %>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-		  Try It Out
-		</button>
-	<% end %>
 
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-	        <h4 class="modal-title text-center" id="myModalLabel"><i class="fa fa-comments-o fa-2x"></i>   Text Me Maybe</h4>
-	      </div>
-	      <div class="modal-body text-center">
-	      	<div id="sent">
-	      		<h3>Your message has been scheduled!</h3>
-	      		<%= image_tag "message_sent.png", style: "margin-top:20px; width:200px;"%><br><br>
-	      	</div>
 
-	      	<div id="form">
-		      	<%= render "shared/templates" %>
 
-		        <%= form_for @unsaved_msg do |f| %>
-							<%= f.telephone_field :send_num, placeholder: "Send To", class: "form-control text-center" %>
-							<%= f.text_field :content, placeholder: "Message", class: "content-body form-control text-center" %>
-							<span class="form_element" id="date">
-								<%= f.datetime_select :time, default: Time.now, ampm: true %>
-							</span>
-				      <div class="modal-footer">
-				      <button type="submit" id="unsavebutton" data-loading-text="Sending..." class="btn btn-primary form-control">
-							  Text It
-							</button>
-							<% end %>
-			      </div>
-					</div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+
+
+		<!-- Unsaved Messages Try It Now Form -->
+		<%= render "shared/unsaved_form" %>
 
 
 
@@ -54,6 +19,17 @@
 
 
 
+
+
+
+
+
+
+
+
+	</div>  <!-- Container Close -->
+</div>  <!-- Background Image End -->
+<!-- 1/3 Home PAGE ENDs -->
 
 
 
@@ -69,9 +45,3 @@
 
 	<!-- Need to hide this later -->
 	<p><%= link_to 'Monitoring Workers', sidekiq_web_path %></p>
-
-
-</div>  <!-- Container Close -->
-
-
-
