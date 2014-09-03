@@ -21,6 +21,7 @@
 			  </div>
 			  <div class="panel-body">
 			    <a href="/users/<%= @user.id %>/contacts/<%= contact.id %>">P: <%= contact.phone_num %></a>
+			    <a  class="btn btn-success col-md-offset-7 col-md-3" href="/users/<%= @user.id %>/contacts/<%= contact.id %>/edit">Edit</a>
 			    <%=  button_to "Delete", user_contact_path(@user.id, contact.id), method: :delete, class: "btn-sm btn-danger col-md-offset-7 col-md-3" %>
 			  </div>
 			</div>
