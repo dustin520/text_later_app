@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
   	@current_user ||= User.find_by(id: session[:user_id])
   end
 
+  def user_name
+    @user_name = User.find(session[:user_id])
+  end
+
 end

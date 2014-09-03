@@ -26,3 +26,7 @@ friday3 = UnsavedMsg.create({email: "test3@ga.com", phone_num: "5162420285", sub
 friend = dustin.contacts.create({first_name: "Jerry", last_name: "Wong", phone_num: "23478900983"})
 friend2 = dustin.contacts.create({first_name: "Daniel", last_name: "Lau", phone_num: "19803748979"})
 # test = Contacts.create({first_name: "Harry", last_name: "Lee", phone_num: "1923807487"})
+friend3 = randall.contacts.create({first_name: "Jerry", last_name: "Wong", phone_num: "23478900983"})
+friend4 = randall.contacts.create({first_name: "Daniel", last_name: "Lau", phone_num: "19803748979"})
+friend5 = sana.contacts.create({first_name: "Jerry", last_name: "Wong", phone_num: "23478900983"})
+friend6 = sana.contacts.create({first_name: "Daniel", last_name: "Lau", phone_num: "19803748979"})

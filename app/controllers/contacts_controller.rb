@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
       user_id = params[:user_id]
       @user = User.find_by_id(user_id)
       @contacts = @user.contacts.all
+      user_name
     end
 
   end
@@ -20,6 +21,7 @@ class ContactsController < ApplicationController
       user_id = params[:user_id]
       @user = User.find_by_id(user_id)
       @contact = @user.contacts.new
+      user_name
     else
       redirect_to user_contacts_path(session_id)
     end
@@ -34,6 +36,7 @@ class ContactsController < ApplicationController
       find_user_id
       contact_id = params[:id]
       @contact = @user.contacts.find(contact_id)
+      user_name
     else
       redirect_to user_contacts_path(session_id) 
     end
