@@ -10,7 +10,7 @@ class UnsavedMsgsController < ApplicationController
 	end
 
 	def create
-		new_message = params[:unsaved_msg].permit(:email, :send_num, :content, :time)
+		new_message = params[:unsaved_msg].permit(:send_num, :content, :time)
 		puts "NEW MESSAGE IS HERE"	
 		puts new_message["send_num"]
 		@text_message = UnsavedMsg.create(new_message)
