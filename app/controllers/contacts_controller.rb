@@ -57,9 +57,35 @@ class ContactsController < ApplicationController
 
 
   def edit
+    session_id = session[ :user_id ]
+    route_id   = params[ :user_id ]
+    
+    if session_id.to_i == route_id.to_i
+      find_user_id
+      find_contact
+      user_name
+    else
+      redirect_to user_contacts_path(session_id)
+    end  
+
   end
 
   def update
+    session_id = session[ :user_id ]
+    route_id   = params[ :user_id ]
+    
+    if session_id.to_i == route_id.to_i
+      find_user_id
+      find_contact
+      # binding.pry
+      updateContact = params.require(:contact).permit(:first_name, :last_name, :phone_num)
+      # binding.pry
+      @contact.update_attributes(first_name: updateContact[:first_name], last_name: updateContact[:last_name], phone_num: updateContact[:phone_num])
+
+      redirect_to user_contacts_path, :notice => "Contact Updated!"
+    else
+      redirect_to user_contacts_path(session_id)
+    end
   	
   end
 

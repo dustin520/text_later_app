@@ -1,9 +1,24 @@
-<h1>Text Later App Front Page</h1>
+	
+<div class="container">
+	<div class="jumbotron">
+		
+	<h1>Text Later App Front Page</h1>
 
 
-Give the option to see all messages
-Give the option to create
-Give the option to edit
+	Give the option to see all messages <br>
+	Give the option to create <br>
+	Give the option to edit <br> 
 
-<%= link_to 'Monitoring Workers', sidekiq_web_path %>
+	<hr class="featurette-divider"/>
 
+
+	<% @users.each do |user| %>
+		<a href="/users/<%= user.id %>"><%= user.first_name + " " + user.last_name %></a><br>
+	<% end %>
+
+	<hr class="featurette-divider"/>
+
+	<%= link_to 'Monitoring Workers', sidekiq_web_path %>
+
+	</div>
+</div>
