@@ -4,7 +4,8 @@ RSpec.describe ContactsController, :type => :controller do
 
   describe "GET index" do
     it "returns http success" do
-      get :index
+      @user = User.find_by_id(1)
+      get :index, :user_id => @user.id
       expect(response).to be_success
     end
   end

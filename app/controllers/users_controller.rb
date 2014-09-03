@@ -1,10 +1,12 @@
-class UsersController < ApplicationController
+  class UsersController < ApplicationController
  	def index
     @users = User.all
+    user_name
 	end
 
   def new
     @user = User.new
+    # user_name
   end
 
   def create
@@ -28,10 +30,12 @@ class UsersController < ApplicationController
     # savedMsg_id = params[:id]
     # @savedMsg = @user.saved_msgs.find(savedMsg_id)
     # @message = @user.savedmessages
+    user_name
   end
 
   def edit
     @user = User.find(params[:id])
+    user_name
   end
 
   def update
