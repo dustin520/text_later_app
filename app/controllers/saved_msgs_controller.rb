@@ -8,6 +8,7 @@ class SavedMsgsController < ApplicationController
 			find_user_id
 			@savedMsg = @user.saved_msgs.all
 			@savedMsgs = @user.saved_msgs.new
+			user_name
 		else
 			redirect_to user_saved_msgs_path(session_id) 
 		end
@@ -20,6 +21,7 @@ class SavedMsgsController < ApplicationController
 		if session_id.to_i == route_id.to_i
 			find_user_id
 			@savedMsg = @user.saved_msgs.new
+			user_name
 		else
 			redirect_to new_user_saved_msg_path(session_id)
 		end
@@ -98,6 +100,7 @@ class SavedMsgsController < ApplicationController
 			find_user_id
 			savedMsg_id = params[:id]
 			@savedMsg = @user.saved_msgs.find(savedMsg_id)
+			user_name
 		else
 			redirect_to user_saved_msgs_path(session_id) 
 		end
@@ -110,6 +113,7 @@ class SavedMsgsController < ApplicationController
 		if session_id.to_i == route_id.to_i
 			find_user_id
 			find_savedMsg
+			user_name
 		else
 			redirect_to user_saved_msgs_path(session_id)
 		end	 

@@ -44,7 +44,7 @@
                 <% end %>
               </div>
           <% elsif session[:user_id] != nil %>
-            <li><a href="/users/<%= session[:user_id] %>">My Page</a></li>
+            <li><a href="/users/<%= session[:user_id] %>"><%= @user_name.first_name %></a></li>
             <li class="navbar-right pull-right"><a href="/logout">Log Out</a></li>
           <% end %>
       </ul>
