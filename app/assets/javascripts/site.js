@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$(".sendText").hide();
 
 	$(".yobutton").on("click", function(){
-		$(".content-body").val("Yo!");
+		$(".content-body").val("Don't forget to come to Cameron's Potluck!  Bring your food!");
 	})
 
 	$(".birthdaybutton").on("click", function(){
