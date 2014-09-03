@@ -1,3 +1,24 @@
 .signupmodal-body {
 
 }
+
+a {
+	padding: 10px 10px 10px 10px;
+}
+
+#signup-form {
+	position: relative;
+	vertical-align: center;
+	overflow-y: auto;
+	max-width: 400px;
+	padding: 15px;
+/*	margin-right: 60px;*/
+	position: center;
+	top:5%;
+	left:15%;
+	outline: none;
+}
+
+#myModal3 {
+
+}
