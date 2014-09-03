@@ -31,8 +31,8 @@
 	        <%= form_for @unsaved_msg do |f| %>
 						<%= f.telephone_field :send_num, placeholder: "Send To", class: "form-control text-center" %>
 						<%= f.text_field :content, placeholder: "Message", class: "content-body form-control text-center" %>
-						<span class="form_element"><br>
-						<%= f.datetime_select :time, default: Time.now, ampm: true %>
+						<span class="form_element">
+							<%= f.datetime_select :time, default: Time.now, ampm: true %>
 						</span>
 	      </div>
 	      <div class="modal-footer">

@@ -6,7 +6,7 @@
 	<div class="row">
 		
 		<div class="col-md-4">
-			<h3>User: <%= @user.email %></h3>
+			<h3>Hello <%= @user.first_name %>!</h3>
 		</div>
 
 			<!-- Flash Messages -->
@@ -54,8 +54,6 @@
 
 	<p><a href="/users/<%= @user.id %>">Go back to User Page</a></p>
 
-
-		<h1>BUTTON BELOW NOT WORKING - UNABLE TO SUBMIT TO CREATE POST PATH</h1>
 			<!-- Button trigger modal -->
 		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 		  Create New Message! 
@@ -70,22 +68,21 @@
 		        <h4 class="modal-title text-center" id="myModalLabel">Text It Later</h4>
 		      </div>
 		      <div class="modal-body">
+						<%= render "shared/templates" %>
+
 		        <%= form_for [@user, @savedMsgs] do |f| %>
-							<%= f.telephone_field :send_num, placeholder: "send to", class: "form-control" %>
-							<%= f.text_field :subject, placeholder: "subject", class:"form-control" %>
-							<%= f.text_field :content, placeholder: "what to say..", class: "form-control" %>
-							<%= f.datetime_select :time, default: Time.now, ampm: true, class:"form-control col-md-offset-2 col-md-3" %>
-							<%= f.submit "Schedule It", class: "form-control btn btn-primary" %>
-		      </div>
+							<%= f.telephone_field :send_num, placeholder: "Send To", class: "form-control text-center" %>
+							<%= f.text_field :subject, placeholder: "Subject", class: "form-control text-center subject-body" %>
+							<%= f.text_field :content, placeholder: "Message", class: "form-control text-center content-body" %>
+						<span class="form_element" style="margin-right:-25%">
+							<%= f.datetime_select :time, default: Time.now, ampm: true, class: "form-control" %>
+						</span>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			        <%= f.submit "Do it!", class: "btn btn-primary"%>
+							<%= f.submit "Text It", class: "form-control btn btn-primary" %>
 						<% end %>
 		      </div>
 		    </div>
 		  </div>
 		</div>
-
-		<hr class="featurette-divider"</hr>
 	
 </div>
