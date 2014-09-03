@@ -29,15 +29,19 @@
 	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	        <h4 class="modal-title text-center" id="myModalLabel">Text It Later</h4>
 	      </div>
-	      <div class="modal-body">
-	        <%= form_for @unsaved_msg, class: "texttit" do |f| %>
-						<%= f.telephone_field :send_num, placeholder: "Number to send to", class: "form-control" %>
-						<%= f.text_field :content, placeholder: "Message to send", class: "form-control" %>
+	      <div class="modal-body text-center">
+	      	
+	      	<%= render "shared/templates" %>
+
+	        <%= form_for @unsaved_msg do |f| %>
+						<%= f.telephone_field :send_num, placeholder: "Send To", class: "form-control text-center" %>
+						<%= f.text_field :content, placeholder: "Message", class: "content-body form-control text-center" %>
+						<span class="form_element"><br>
 						<%= f.datetime_select :time, default: Time.now, ampm: true %>
+						</span>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        <%= f.submit "Text It", class: "btn btn-primary"%>
+		        <%= f.submit "Text It", class: "btn btn-primary form-control"%>
 					<% end %>
 	      </div>
 	    </div>
