@@ -19,6 +19,7 @@
         <li class="divider"></li>
           <% if session[:user_id] != nil %>
             <li><a href="/users/<%= session[:user_id] %>">My Page</a></li>
+            <li><a href="/users/<%= session[:user_id] %>/contacts">Contacts</a></li>
             <li class="divider"></li>
             <li><a href="/users/<%= session[:user_id] %>/saved_msgs">Messages</a></li>
             <li><a href="/users/<%= session[:user_id] %>/saved_msgs/new">Create New</a></li>
