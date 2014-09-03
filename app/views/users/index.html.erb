@@ -13,7 +13,7 @@
 
 
 	<% @users.each do |user| %>
-		<a href="/users/<%= user.id %>"><%= user.first_name + " " + user.last_name %></a><br>
+		<a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a><br>
 	<% end %>
 
 	<hr class="featurette-divider"/>
