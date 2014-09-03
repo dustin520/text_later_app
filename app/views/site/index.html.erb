@@ -1,20 +1,16 @@
+<div id="">	
+</div>
+
 <div class="container">
 	<h1 class="page-header">Text Me Maybe <small><i>No more excuses, text now deliver later!</i></small></h1>
 
-
-	<p>Give the option to see all messages</p>
-	<p>Give the option to create</p>
-	<p>Give the option to edit</p>
-	<hr class="featurette-divider">
-
 	<!-- This button only shows when user is not logged in.
 	 -->
-	<h3>Ready to Create a message?</h3>
-
-	<!-- Button trigger modal -->
-	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	  Try It Out
-	</button>
+	<% if session[:user_id] == nil %>
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		  Try It Out
+		</button>
+	<% end %>
 
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -50,6 +46,23 @@
 	    </div>
 	  </div>
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	<hr class="featurette-divider">
