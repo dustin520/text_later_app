@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
 	validates :email, presence: true, uniqueness: {case_sensitive: false}
  	validates :phone_num, presence: true
+ 	# validates :first_name, presence: true
+ 	# validates :last_name, presence: true
 
 	def set_password_reset
 		self.code = SecureRandom.urlsafe_base64
@@ -18,5 +20,6 @@ class User < ActiveRecord::Base
 	end
 
 	has_many :saved_msgs
+	has_many :contacts
 
 end
