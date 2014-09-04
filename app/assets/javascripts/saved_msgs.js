@@ -127,10 +127,50 @@ $(function () {
 
 
 
-// Loading Bar
-$('#textButton').click(function () {
-    var btn = $(this)
-    btn.button('loading')
-  });
+// // Loading Bar
+// $('#textButton').click(function () {
+//     var btn = $(this)
+//     btn.button('loading')
+//   });
+
+
+// Toggle views for click and submit new saved msg in dash
+	$(".createNew").on('click', function() {
+		$('#sent').hide()
+		$('#form').show()
+	});	
+
+
+
+// Ajax post for new saved msg in dash
+	$(".new_saved_msg").on("submit", function(e){
+		e.preventDefault();
+		console.log("Submitting form ....")
+
+		var savedMsg = {
+			send_num: $('#saved_msg_send_num').val(),
+			subject: $("#saved_msg_subject").val(),
+			content: $("#saved_msg_content").val(),
+			"time(1i)": $("#saved_msg_time_1i").val(),
+			"time(2i)": $("#saved_msg_time_2i").val(),
+			"time(3i)": $("#saved_msg_time_3i").val(),
+			"time(4i)": $("#saved_msg_time_4i").val(),
+			"time(5i)": $("#saved_msg_time_5i").val()
+		}
+
+		var url = $(this).attr('action');
+		console.log(url);
+		console.log("savedMsg", savedMsg);
+
+		$.post(url, {saved_msg: savedMsg})
+			.done(function(data){
+				console.log("the data = ", data)
+				$('#form').hide()
+				$('#sent').show()
+
+			})
+
+	});	
+
 
 });

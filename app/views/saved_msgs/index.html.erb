@@ -49,13 +49,12 @@
 	</table>
 
 
-
 	<hr class="featurette-divider"/>
 
 	<p><a href="/users/<%= @user.id %>">Go back to User Page</a></p>
 
 			<!-- Button trigger modal -->
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		<button class="btn btn-primary btn-lg createNew" data-toggle="modal" data-target="#myModal">
 		  Create New Message! 
 		</button>
 
@@ -65,9 +64,15 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-		        <h4 class="modal-title text-center" id="myModalLabel">Text It Later</h4>
+		        <h4 class="modal-title text-center" id="myModalLabel">Text Me Maybe</h4>
 		      </div>
-		      <div class="modal-body">
+		      <div class="modal-body text-center">
+	      	<div id="sent">
+	      		<h3>Your message has been scheduled!</h3>
+	      		<%= image_tag "message_sent.png", style: "margin-top:20px; width:200px;"%><br><br>
+	      	</div>
+		      	
+		      <div id="form">
 		      	
 						<%= render "shared/templates_savedMsg" %>
 
@@ -89,6 +94,7 @@
 							</button>
 			      </div>
 							<% end %>
+		      </div>
 		    </div>
 		  </div>
 		</div>
