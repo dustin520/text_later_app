@@ -210,4 +210,5 @@ DEPENDENCIES
   turbolinks
   twilio-ruby
   uglifier (>= 1.3.0)
+  unicorn
   unicorn-rails
