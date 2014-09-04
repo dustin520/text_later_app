@@ -15,12 +15,12 @@ body {
 
 /*For Top Background Image*/
 #topbackground{
-  background:url('http://cdn.pencilscoop.netdna-cdn.com/wp-content/uploads/2013/12/blurred_background_1.jpg');
-  height: 500px;
+  /*background:url('http://ak.picdn.net/shutterstock/videos/5908742/preview/stock-footage-woman-texting-sending-sms-on-smartphone-in-bar.jpg') 0 -150px;*/
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+
 }
 
 
@@ -57,7 +57,10 @@ body {
 
 #tag{
 	color: #33536d;
-	font-size: 30px;
+	/*color: white;*/
+
+/*	font-size: 30px;
+*/	font-weight: bold;
 	font-family:Open Sans,'Karla', sans-serif;	
 }
 
