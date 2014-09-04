@@ -26,11 +26,16 @@ $(document).ready(function(){
 		$(".content-body").val("Walk the dog.")
 	})
 
+	// When click on Try It Button
+	$("#tryItOut").on("click", function(){
+		$("#sent").hide()
+		$("#form").show()
+	})
+
 
 	$("#unsavebutton").on("click", function(e){
 		e.preventDefault();
-		var btn = $(this)
-		btn.button('loading')
+		
 
 		console.log("Form is submitting...")
 
@@ -51,10 +56,8 @@ $(document).ready(function(){
 				console.log("THIS IS THE DATA", data)
 				$("#form").hide()
 				$("#sent").show()
-			}).on("click", function(){
-				alert("hello")
 			})
-			
+
 
 
 	})

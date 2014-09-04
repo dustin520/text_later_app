@@ -1,51 +1,28 @@
-<!-- 1/3 HOMEPAGE BEGINS -->
-<div id="topbackground"> 
+<div class="jumbotron" id="topbackground">
 
 	<div class="container">
-		<div class="row">
-		<div class="col-md-6 text-center" id="mobilephone">
-			<%= image_tag "mobilephone.jpg", class: "img-thumbnail"%>
-			</div> 
-	
-		<div class="col-md-6 text-center" id="tagbox">
-			<%= image_tag "logo_TextMeMaybe.png", id: "logoimg", style: " width:150px; border:50px; "%>
-			<h1 id="tag">Your texts, anytime</h1>
-			<button class="btn btn-info" id="linktosignup"><a href="/signup"><span>Sign Up</span></a></button>
-		</div> <!-- Row Ends -->
-	<div class="text-center" id="learn-more">
-		Learn more
-	</div>
+			<div class="row">
 
+			<div class="col-md-6 text-center">
+				<%= image_tag "logo_TextMeMaybe.png", id: "logoimg", style: " width:150px; border:50px; "%>
+
+				<h1 id="tag">Your texts, anytime</h1>
+				<button class="btn btn-info" id="linktosignup"><a href="/signup">Sign Up</a></button>
+			</div>
+
+		<div class="col-md-6">		
+		</div>
+
+
+
+		</div>  <!-- row close -->
+		
+
+	</div>  <!-- container close -->
 
 </div>
 
 
-
-
-
-
-
-
-
-
-
-	</div>  <!-- Container Close -->
-</div>  <!-- Background Image End -->
-<hr class="featurette-divider">
-<!-- 1/3 Home PAGE ENDs -->
-
-
-
-
-
-
-			<%= render "shared/unsaved_form" %>
-
-
-
-
-
-	<hr class="featurette-divider">
-
-	<!-- Need to hide this later -->
-	<p><%= link_to 'Monitoring Workers', sidekiq_web_path %></p>
+			<div class="text-center" id="learn-more">
+				Learn more  <i class="fa fa-sort-desc fa-2x"></i>
+			</div> 
