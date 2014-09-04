@@ -33,6 +33,14 @@ $(document).ready(function(){
 		$(".subject-body").val("Dog Activity");
 	});
 
+
+$(function () { 
+  $("[data-toggle='tooltip']").tooltip(); 
+  
+	$("#saved.quote").tooltip('hover focus');
+});
+
+
 	$("#saved.quote").on("click", function(e){
 		e.preventDefault();
 		console.log("test")
