@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
   resources :unsaved_msgs
 
+  get '/quote', to: 'site#quote'
+
 
   mount Sidekiq::Web => '/sidekiq'
 
