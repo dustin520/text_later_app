@@ -1,7 +1,7 @@
 	<!-- This button only shows when user is not logged in.
 	 -->
 	<% if session[:user_id] == nil %>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		<button id="tryItOut"class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 		  Try It Out
 		</button>
 	<% end %>

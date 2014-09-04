@@ -26,6 +26,17 @@ $(document).ready(function(){
 		$(".content-body").val("Walk the dog.")
 	})
 
+	// var getMsgTime = function () {
+	// 	return [
+	// 		$("#unsaved_msg_time_1i").val(),
+	// 		"-"
+	// 	 	$("#unsaved_msg_time_2i").val(),
+	// 	 	":"
+	// 	 	$("#unsaved_msg_time_3i").val(),
+	// 	 	$("#unsaved_msg_time_4i").val(),
+	// 	 	$("#unsaved_msg_time_5i").val()
+	// 	].join("")
+	// }
 
 	$("#unsavebutton").on("click", function(e){
 		e.preventDefault();
@@ -51,11 +62,9 @@ $(document).ready(function(){
 				console.log("THIS IS THE DATA", data)
 				$("#form").hide()
 				$("#sent").show()
-			}).on("click", function(){
-				alert("hello")
 			})
-			
 
+			
 
 	})
 
