@@ -1,3 +1,11 @@
+*, div {
+	/*border: 1px solid #f0f;*/
+
+}
+
+body {
+	padding-top: 20px;
+}
 /*For Scheduled Dates*/
 .form_element{
 	font-size: 20px;
@@ -7,7 +15,7 @@
 
 /*For Top Background Image*/
 #topbackground{
-  /*background:url('http://xn--80aqafcrtq.cc/img/7/9/0/79048.jpg');*/
+  background:url('http://cdn.pencilscoop.netdna-cdn.com/wp-content/uploads/2013/12/blurred_background_1.jpg');
   height: 500px;
   background-size: cover;
   -webkit-background-size: cover;
@@ -15,9 +23,6 @@
   -o-background-size: cover;
 }
 
-.navbar {
-	margin-bottom: 0;
-}
 
 /*.navbar-inverse {
 	background-color: transparent;
@@ -30,13 +35,6 @@
 	font-size: 20px;
 }
 
-<<<<<<< HEAD
-p {
-	 text-align: center;
-	 font-family: 'Droid Sans', sans-serif;
-}
-
-=======
 .navbar-inverse .navbar-nav>li>a:hover {
 	border-bottom: 2px solid #fff;
 }
@@ -75,6 +73,18 @@ p {
 	text-decoration: none;
 	font-size: 14px;
 	color:#91a8ba;
+}
+
+#linktosignup{
+text-decoration: none;
+}
+
+.navbar-brand img {
+height: 100%;
+}
+
+#jumboimg {
+width:100%;
 }
 
 /*For Middle Section Images*/
