@@ -34,13 +34,59 @@ $(document).ready(function(){
 	});
 
 
+// Contact Templates
+	$(".contacts").on("click", function(){
+		var num = $(this).context.children[1].innerHTML;
+			console.log(num)
+
+		$(".phone-body").val(num)
+		$(".content-body").val("Yo!");
+		$(".subject-body").val("To Contact");
+		// get contacts phone num - ajax?
+		// $.getJSON("/users//contacts.json", function(data){
+		// 	console.log(data)
+		// });
+	});
+
+
+// Self Reminder Template - AJAX call to get own number 
+	$(".alertSelf").on("click", function(){
+		var mynum = $(this).context.children[1].innerText;
+
+			console.log(mynum)
+
+		$('.phone-body').val(mynum); // get own number
+		$(".content-body").val("Make sure to deploy WDI project!");
+		$(".subject-body").val("Reminder!");
+	});
+
+// Timed Reminder Templates - set time and subject=timer
+	// $("#saved_msg_time_3i").on("click", function(){
+	// 	$(".subject-body").val("Timer");
+
+	// 	$("#saved_msg_time_3i").val("6");
+	// });
+
+	// $(".oneDay").on("click", function(){
+	// 	$(".subject-body").val("Timer");
+	// 	$("").val("");
+	// });
+
+	// $(".oneWeek").on("click", function(){
+	// 	$(".subject-body").val("Timer");
+	// 	$("").val("");
+	// });
+
+
+
+// Tool Tip
 $(function () { 
   $("[data-toggle='tooltip']").tooltip(); 
   
 	$("#saved.quote").tooltip('hover focus');
 });
 
-
+// Quotes 
 	$("#saved.quote").on("click", function(e){
 		e.preventDefault();
 		console.log("test")
@@ -57,6 +103,26 @@ $(function () {
         }
     })
 		$(".subject-body").val("Inspirational Quote");
+	});
+
+// Puns
+	$("#saved.pun").on("click", function(e){
+		e.preventDefault();
+		console.log("test")
+    $.ajax({
+        url: "/pun",
+        success: function (pun) {
+        	// console.log("data received: " + pun);
+            randNum = Math.floor(Math.random()*pun.length);
+            	console.log("Number puns: " + pun.length);
+            random = pun[randNum]
+            if (random.length > 4) {
+							$(".content-body").val(random);
+							console.log(random)
+						};
+        }
+    })
+		$(".subject-body").val("Inspirational Pun");
 	});
 
 

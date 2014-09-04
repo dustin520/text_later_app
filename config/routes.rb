@@ -32,5 +32,6 @@ Rails.application.routes.draw do
 
   get '/quote', to: 'site#quote'
 
+  get '/pun', to: 'site#pun'
 
 end
