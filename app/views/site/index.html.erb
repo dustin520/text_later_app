@@ -118,9 +118,11 @@
 	</div> <!-- row close -->
 </div> <!-- container close -->
 
-<br><br>	
-	<div class = "text-center important-box" id="tryItBtn col-md-offset-4 col-md-4">
+<br><br>
+	<% if session[:user_id]	== nil %>	
+		<div class = "text-center important-box" id="tryItBtn col-md-offset-4 col-md-4">
 		<a href="/signup" class="btn btn-lg btn-default" id="joinUs" >Join Us</a>
+	<% end %>
 		<%= render "shared/unsaved_form" %>
 	</div>
 	<br>
