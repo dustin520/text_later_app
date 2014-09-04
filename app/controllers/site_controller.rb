@@ -25,4 +25,19 @@ class SiteController < ApplicationController
 		render :json => results
 	end
 
+	def pun
+		url = open("http://www.punoftheday.com/cgi-bin/disppuns.pl?ord=F").read
+
+		page = Nokogiri::HTML(url)
+			# p page
+		results = page.css("table td").map do |pun|
+			# binding.pry
+			pun.text
+		end
+
+		p results
+
+		render :json => results
+	end
+
 end

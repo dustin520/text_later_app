@@ -11,6 +11,11 @@ class ContactsController < ApplicationController
       user_name
     end
 
+    respond_to do |format|
+      format.html
+      format.json { render json: @contacts}
+    end
+
   end
 
   def new

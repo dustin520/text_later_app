@@ -9,7 +9,7 @@
 		<%= form_for [@user, @savedMsg] do |f| %>
 
 			<div class='col-md-offset-3 col-md-6'>
-				<%= f.telephone_field :send_num, placeholder: "Send To", autofocus: true, class: 'form-control' %>
+				<%= f.telephone_field :send_num, placeholder: "Send To", autofocus: true, class: 'form-control phone-body' %>
 			</div>
 			<div class='col-md-offset-3 col-md-6'>
 				<%= f.text_field :subject, placeholder: "Subject", class: 'form-control subject-body' %>
@@ -17,21 +17,49 @@
 			<div class='col-md-offset-3 col-md-6'>
 				<%= f.text_area :content, placeholder: "Message", class: 'form-control content-body' %>
 			</div><br>
+			<div class='col-md-offset-4 col-md-4 form_element_sav'>
+				<%= f.datetime_select :time, default: Time.now, ampm: true, class: "time-body" %>
+			</div><br>
 			<div class='col-md-offset-3 col-md-6'>
 				<button type="submit" id="textButton" data-loading-text="Sending..." class="btn btn-primary form-control">Text It
 				</button>
 			</div>
-			<div class='col-md-offset-4 col-md-4 form_element_sav'>
-				<%= f.datetime_select :time, default: Time.now, ampm: true %>
-			</div>
 		<% end %>
-	</div>
+	</div><br>
 
-	<hr class="featurette-divider"/>
+	<hr class="featurette-divider"/><br>
 
 	<%= render "shared/templates_saved" %>
 
-	<hr class="featurette-divider"/>
+	<hr class="featurette-divider"/><br>
+
+		<div class="col-xs-offset-3 col-xs-2 text-center">
+			<button class="alertSelf btn btn-lg">
+				<h5>Me</h5>
+				<span style="display:none;" class="selfNum"><%= @user.phone_num %></span>
+			</button>
+		</div>
+
+	<div class="row">
+		<% @user.contacts.each do |contact| %>
+		<div class=" col-xs-2 text-center">
+			<button class="contacts btn btn-lg">
+				<h5><%= contact.first_name %></h5>
+				<span style ="display:none;" class ="phoneNum"><%= contact.phone_num %></span>
+			</button> 		
+		</div>
+		<% end %>
+	</div><br> <!-- Row Close -->
+
+	<!-- <hr class="featurette-divider"/><br>	 -->
+
+
+<!-- RENDER TIME TEMPLATE WHEN BUTTONS WORK -->
+
+
+
+
+	<hr class="featurette-divider"/><br>
 
 	<a href="/users/<%= @user.id %>", class: 'btn btn-primary'>User Page</a> 
 	<%= link_to "Saved Messages", user_saved_msgs_url %>
