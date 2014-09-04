@@ -11,7 +11,8 @@
  * file per style scope.
  *
  *= require "bootstrap-3.2.0.min"
- *= require_tree .
  *= require "font-awesome.min.css"
+ *= require "custom"
+ *= require_tree .
  *= require_self
  */
