@@ -1,26 +1,41 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-2">
+<!-- Login Modal -->
 
-	<h1> Login </h1>
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog">
+  	<div class="modal-content" id="login-form">
+      <div class="modal-header">
+      	<div class="text-center">
+          <%= image_tag "login_logo_SML.png" %>
+        </div>
+      </div>
+      		<div class="signupmodal-body">
+          		<form class="form col-md-12 center-block">
+            <div class="form-group">
+          		
+          		<br>
+          		<!-- <h1> Login </h1> -->
 
-		<% flash.each do |k,v| %>
-			<p class "text-danger" id ="<%= k %>"><%= v %></p>
-		<% end %>
+							<% flash.each do |k,v| %>
+								<p class "text-danger" id ="<%= k %>"><%= v %></p>
+							<% end %>
 
-		<%= form_for :user do |f| %>
-
-			<%= f.label :email %>
-			<%= f.text_field :email, placeholder: "Enter your email" %> <br/>
-
-			<%= f.label :password %>
-			<%= f.password_field :password, placeholder: "password" %><br/><br/>
-			
-			<%= f.submit "Login", class: "btn btn-large btn-primary" %><br/>
-		<% end %>
-		
-	<h3> <%= link_to "Forget Password?", new_password_path %> </h3>
-
-    </div>
+						<%= form_for :user do |f| %>
+						<div class="form-group">
+							<%= f.text_field :email, placeholder: "Enter your email", class: "form-control input-lg", autofocus: true  %>
+						</div>
+							
+						<div class="form-group">
+							<%= f.password_field :password, placeholder: "Password", class: "form-control input-lg" %>
+						</div>
+								
+							<div class="modal-footer">
+							<%= f.submit "Login", class: "btn btn-md btn-primary form-control" %><br/>
+							</div>
+            	<% end %>
+          	</div>
+						<h5 class="col-md-5"> <%= link_to "Forget Password?", new_password_path, class:"text-center" %> </h5>
+						<h5 class="col-md-offset-4 	col-md-2"><%= link_to "Go Home", root_url, class:"text-center" %></h5>
+				</div>
+  	</div>
   </div>
 </div>

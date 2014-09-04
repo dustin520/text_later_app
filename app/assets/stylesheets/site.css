@@ -16,6 +16,7 @@ body {
 /*For Top Background Image*/
 #topbackground{
   /*background:url('http://ak.picdn.net/shutterstock/videos/5908742/preview/stock-footage-woman-texting-sending-sms-on-smartphone-in-bar.jpg') 0 -150px;*/
+  background: url('https://s3.amazonaws.com/ooomf-com-files/9s1lvXLlSbCX5l3ZaYWP_hdr-1.jpg') no-repeat center center;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -95,7 +96,7 @@ width:100%;
     height:260px;
     width:400px;
     overflow:hidden;
-    border-radius:10px;
+    border-radius:10%;
     margin: auto;
     padding: 25px 0px 25px 0px;
     padding-left: 50px;
@@ -104,7 +105,15 @@ width:100%;
 }
 
 #middle-section{
-	background-color: #C9D5DE;
+	/*background-color: #C9D5DE;*/
+}
+
+div#midOneC {
+	margin-bottom: 2em;
+}
+
+div#midContainer {
+	padding-top: 4em;
 }
 
 .featurette-divider{
@@ -112,6 +121,31 @@ width:100%;
 	padding: 0px;
 }
 
+.middle_text {
+	margin-top: 15%;
+}
 
 /*1/3 HOMEPAGE ENDS*/
 
+/*3/3 HOMEPAGE STARTS*/
+
+#tutorial {
+	margin-top: 5em;
+	margin-bottom: 5%;
+}
+
+#tut_desc {
+	padding-top: 2.5em;
+}
+
+div#tryItBtn {
+	padding-top: 50px;
+}
+
+a#joinUs {
+	background-color: RGB(42, 175, 255);
+}
+
+div.important-box {
+	/*border: 1px solid;*/
+}

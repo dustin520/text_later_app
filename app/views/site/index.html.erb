@@ -29,15 +29,20 @@
 Learn more  <i class="fa fa-sort-desc fa-2x"></i>
 </div>
 
-<hr class="featurette-divider">
-<!-- 1/3 Home PAGE ENDs -->
-<div id="middle-section"><br/><br/><br/>
-<div class="container">
-    <div class="col-md-6">
+<hr>
 
-		<h1 id="tag">Belated, No More</h1>
-		<h4>Be the person who always remembers and </h4>
-		<h4>never forgets to tell mom that you love her on her birthday.</h4>
+
+<!-- 1/3 Home PAGE ENDs -->
+
+
+<div id="middle-section"><br/><br/><br/>
+<div class="container id="midOneC>
+    <div class="col-md-6 text-center">
+			<div class="middle_text">
+				<h1 id="tag">Belated, No More</h1>
+				<h4>Be the person who always remembers and </h4>
+				<h4>never forgets to tell mom that you love her on her birthday.</h4>
+			</div>
 
     </div>
 
@@ -47,23 +52,32 @@ Learn more  <i class="fa fa-sort-desc fa-2x"></i>
 
 </div><br/><br/><br/>
 
+<hr class="featurette-divider">
 
-<div class="container">
+
+<div class="container" id="midContainer">
     <div class="col-md-6">
           <%= image_tag "ontime_onschedule_xsml.png", id: "middle-images" %>
     </div>
 
-  	<div class="col-md-6">
-		<h1 id="tag">On Time, On Schedule</h1>
-		<h4>Be the one who keeps the pack on time and on schedule.</h4>
-		<h4>Schedule your texts in advance to remind them later.</h4>
+  	<div class="col-md-6 text-center">
+  		<div class="middle_text">
+				<h1 id="tag">On Time, On Schedule</h1>
+				<h4>Be the one who keeps the pack on time and on schedule.</h4>
+				<h4>Schedule your texts in advance to remind them later.</h4>
+  		</div>
 	</div>			
 </div><br/><br/><br/>
 
-<div class="container">
-    <div class="col-md-6">
-		<h1 id="tag">Gets there when you want it...</h1>
-		<h4>Send your text now and deliver it later.</h4>
+<hr class="featurette-divider">
+
+
+<div class="container" id="midContainer">
+    <div class="col-md-6 text-center">
+    	<div class="middle_text">
+				<h1 id="tag">Gets there when you want it...</h1>
+				<h4>Send your text now and deliver it later.</h4>
+    	</div>
     </div>
 
 	<div class="col-md-6">
@@ -71,6 +85,7 @@ Learn more  <i class="fa fa-sort-desc fa-2x"></i>
 	</div>
 </div><br/><br/><br/>
 
+	<hr class="featurette-divider"/>
 </div>
 <!-- 2/3 Home PAGE ENDs -->
 
@@ -81,8 +96,38 @@ Learn more  <i class="fa fa-sort-desc fa-2x"></i>
 
 </div>
 
+	<!-- 		<div class="text-center" id="learn-more">
+				Learn more  <i class="fa fa-sort-desc fa-2x"></i>
+			</div>  -->
 
-	<%= render "shared/unsaved_form" %>
+<!-- 3/3 HOME PAGE BEGINS  -->
+
+<div class="container">
+	<div class="row">
+		<div class="stepOne col-md-4 text-center">
+			<%= image_tag "signupPhoto.jpg", id: "tutorial", class: "img-circle", style: "height:250px; width:250px" %>
+			<h3 class="tut_desc">Sign Up</h3>
+		</div>
+		<div class="stepTwo col-md-4 text-center">
+			<%= image_tag "managePhoto.png", id: "tutorial", class: "img-circle", style: "height:250px; width:250px" %>
+			<h3 class="tut_desc">Manage It</h3>
+		</div>
+		<div class="stepThree col-md-4 text-center">		
+			<%= image_tag "schedulePhoto.png", id: "tutorial", class: "img-circle", style: "height:250px; width:250px" %>
+			<h3 class="tut_desc">Schedule It</h3>
+		</div>
+	</div> <!-- row close -->
+</div> <!-- container close -->
+
+	<div class = "text-center important-box" id="tryItBtn col-md-offset-4 col-md-4">
+		<a href="/signup" class="btn btn-lg btn-primary" id="joinUs" style="background-color:RGB(42, 175, 255); color:RGB(249, 255, 255)">Join Us</a>
+		<%= render "shared/unsaved_form" %>
+	</div>
+
+
+<!-- 3/3 HOME PAGE ENDS -->
+
+
 
 
 			<div class="text-center" id="learn-more">
