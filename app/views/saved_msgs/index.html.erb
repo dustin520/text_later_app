@@ -36,10 +36,10 @@
 
 			<% @savedMsg.each do |msg| %>
 				<tr class="row">
-					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.subject %></a></td>
-					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.content %></a></td>
-					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.created_at.strftime("%a %l:%m %P %-m/%d/%y") %></a></td>
-					<td><a href="/users/<%= @user.id %>/saved_msgs/<%= msg.id %>"><%= msg.time.strftime("%a %l:%m %P %-m/%d/%y") %></a></td>
+					<td><%= msg.subject %></td>
+					<td><%= msg.content %></td>
+					<td><%= msg.created_at.strftime("%a %l:%m %P %-m/%d/%y") %></td>
+					<td><%= msg.time.strftime("%a %l:%m %P %-m/%d/%y") %></td>
 					<td><%=  button_to "Delete", user_saved_msg_path(@user.id, msg.id), method: :delete, class: "form-control btn-xs btn-danger"%></td>
 				</tr>
 			<% end %>
@@ -52,7 +52,6 @@
 
 	<hr class="featurette-divider"/>
 
-	<p><a href="/users/<%= @user.id %>">Go back to User Page</a></p>
 
 			<!-- Button trigger modal -->
 		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
