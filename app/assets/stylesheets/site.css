@@ -108,6 +108,14 @@ width:100%;
 	/*background-color: #C9D5DE;*/
 }
 
+div#midOneC {
+	margin-bottom: 2em;
+}
+
+div#midContainer {
+	padding-top: 4em;
+}
+
 .featurette-divider{
 	margin: 0px;
 	padding: 0px;
@@ -130,11 +138,14 @@ width:100%;
 	padding-top: 2.5em;
 }
 
-#tryItBtn {
-	margin-top: 3em;
+div#tryItBtn {
+	padding-top: 50px;
 }
 
 a#joinUs {
 	background-color: RGB(42, 175, 255);
 }
 
+div.important-box {
+	/*border: 1px solid;*/
+}
