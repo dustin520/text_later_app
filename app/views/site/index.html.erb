@@ -29,10 +29,14 @@
 Learn more  <i class="fa fa-sort-desc fa-2x"></i>
 </div>
 
-<hr class="featurette-divider">
+<hr>
+
+
 <!-- 1/3 Home PAGE ENDs -->
+
+
 <div id="middle-section"><br/><br/><br/>
-<div class="container">
+<div class="container id="midOneC>
     <div class="col-md-6 text-center">
 			<div class="middle_text">
 				<h1 id="tag">Belated, No More</h1>
@@ -48,8 +52,10 @@ Learn more  <i class="fa fa-sort-desc fa-2x"></i>
 
 </div><br/><br/><br/>
 
+<hr class="featurette-divider">
 
-<div class="container">
+
+<div class="container" id="midContainer">
     <div class="col-md-6">
           <%= image_tag "ontime_onschedule_xsml.png", id: "middle-images" %>
     </div>
@@ -63,7 +69,10 @@ Learn more  <i class="fa fa-sort-desc fa-2x"></i>
 	</div>			
 </div><br/><br/><br/>
 
-<div class="container">
+<hr class="featurette-divider">
+
+
+<div class="container" id="midContainer">
     <div class="col-md-6 text-center">
     	<div class="middle_text">
 				<h1 id="tag">Gets there when you want it...</h1>
@@ -108,13 +117,13 @@ Learn more  <i class="fa fa-sort-desc fa-2x"></i>
 			<h3 class="tut_desc">Schedule It</h3>
 		</div>
 	</div> <!-- row close -->
+</div> <!-- container close -->
 
-	<div class = "text-center" id="tryItBtn">
+	<div class = "text-center important-box" id="tryItBtn col-md-offset-4 col-md-4">
 		<a href="/signup" class="btn btn-lg btn-primary" id="joinUs" style="background-color:RGB(42, 175, 255); color:RGB(249, 255, 255)">Join Us</a>
 		<%= render "shared/unsaved_form" %>
 	</div>
 
-</div> <!-- container close -->
 
 <!-- 3/3 HOME PAGE ENDS -->
 

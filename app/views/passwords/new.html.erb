@@ -1,7 +1,33 @@
-<h2>Enter your email to reset password</h2>
 
-<%= form_tag passwords_path do %>
-<%= text_field_tag :email, nil, placeholer: "Enter your email" %> <br>
-<%= submit_tag "Reset Password" %>
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog">
+  	<div class="modal-content" id="login-form">
+      <div class="modal-header">
+      	<div class="text-center">
+          <%= image_tag "login_logo_SML.png" %>
+        </div>
+      </div>
+      		<div class="signupmodal-body">
+          		<form class="form col-md-12 center-block">
+            <div class="form-group">
+          		
+          		<br>
+          		<h3 class="text-center"> Type Email to Reset </h3><br>
 
-<% end %>
+
+							<%= form_tag passwords_path do %>
+						<div class="form-group">
+							<%= text_field_tag :email, nil, placeholer: "Enter your email", class: "form-control input-lg", autofocus: true %> <br>
+						</div>
+								
+							<div class="modal-footer">
+								<%= submit_tag "Reset Password", class: "btn btn-md btn-primary form-control"  %><br/>
+							</div>
+            	<% end %>
+						<h4 class="col-md-offset-4 	col-md-4"><%= link_to "Home", root_url, class:"text-center" %></h4>
+          	</div>
+				</div>
+  	</div>
+  </div>
+</div>
+
