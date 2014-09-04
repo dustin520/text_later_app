@@ -34,6 +34,4 @@ Rails.application.routes.draw do
 
   get '/pun', to: 'site#pun'
 
-  mount Sidekiq::Web => '/sidekiq'
-
 end

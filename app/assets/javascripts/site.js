@@ -57,11 +57,13 @@ $(document).ready(function(){
 				$("#form").hide()
 				$("#sent").show()
 			})
-
-
-
 	})
 
+
+	// Scrolling for Learn More
+$("#learn-more").click(function(event) {
+$('html,body').animate({ scrollTop: $("#middle-section").offset().top }, 500);
+});
 
 
 

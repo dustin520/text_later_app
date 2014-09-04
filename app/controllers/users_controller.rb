@@ -11,7 +11,7 @@
   end
 
   def create
-    user_info = params.require(:user).permit(:email, :password, :phone_num)
+    user_info = params.require(:user).permit(:email, :first_name, :last_name, :password, :phone_num)
     @user = User.create(user_info)
 		if @user.errors.any?
       # puts "no user was created, why?!?"

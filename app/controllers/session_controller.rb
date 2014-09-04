@@ -21,5 +21,8 @@ class SessionController < ApplicationController
       # render text: "You've destroyed the session"
       redirect_to '/', notice: "You have successfully logged out!"
   end
+  def edit
+
+  end
 end
 
