@@ -1,12 +1,14 @@
   class UsersController < ApplicationController
  	def index
-    @users = User.all
-    p @users
-    user_name
+    redirect_to '/'
 	end
 
   def new
-    @user = User.new
+    if session[:user_id] == nil
+      @user = User.new 
+    else
+      redirect_to '/'
+    end
     # user_name
   end
 
@@ -26,12 +28,14 @@
   end
 
   def show
-    @current_user = current_user
-    @user = User.find_by_id(params[:id])
-    # savedMsg_id = params[:id]
-    # @savedMsg = @user.saved_msgs.find(savedMsg_id)
-    # @message = @user.savedmessages
-    user_name
+    # if session[:user_id] != nil
+    #   @current_user = current_user
+    #   @user = User.find_by_id(params[:id])
+    #   user_name
+    # else
+      redirect_to '/'
+    # end
+
   end
 
   def edit

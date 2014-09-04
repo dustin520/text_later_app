@@ -12,7 +12,9 @@
 
 <h1 id="tag">Your texts, anytime</h1>
 <p>Never forget to send a text again</p>
-<a href="/signup" class="btn btn-lg btn-success">Sign Up</a>
+<% if !session[:user_id] %>
+	<a href="/signup" class="btn btn-lg btn-default">Sign Up</a>
+<% end %>
 </div>
 
 
@@ -75,7 +77,7 @@
     <div class="col-md-6 text-center">
     	<div class="middle_text">
 				<h1 id="tag">Gets there when you want it...</h1>
-				<h4>Send your text now and deliver it later.</h4>
+				<h4>Send your text now, and deliver it later.</h4>
     	</div>
     </div>
 
@@ -118,14 +120,15 @@
 	</div> <!-- row close -->
 </div> <!-- container close -->
 
-<br><br>	
-	<div class = "text-center important-box" id="tryItBtn col-md-offset-4 col-md-4">
+<br><br>
+	<% if session[:user_id]	== nil %>	
+		<div class = "text-center important-box" id="tryItBtn col-md-offset-4 col-md-4">
 		<a href="/signup" class="btn btn-lg btn-default" id="joinUs" >Join Us</a>
+	<% end %>
 		<%= render "shared/unsaved_form" %>
 	</div>
 	<br>
 
 
 <!-- 3/3 HOME PAGE ENDS -->
-
 
