@@ -33,6 +33,4 @@ Rails.application.routes.draw do
   get '/quote', to: 'site#quote'
 
 
-  mount Sidekiq::Web => '/sidekiq'
-
 end
