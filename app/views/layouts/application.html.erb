@@ -41,10 +41,10 @@
               <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                   <!-- Login form here -->
                   <%= form_for :user, :url => login_path do |f| %>
-                  <%= f.text_field :email, placeholder: "Enter your email" %> <br><br>
-                  <%= f.password_field :password, placeholder: "Password" %><br><br>
-                  <%= f.submit "Login", class: "btn btn-large btn-primary" %><br>
-                <h4> <%= link_to "Forgot Password?", new_password_path %> </h4>
+                  <%= f.text_field :email, placeholder: "Email", class:"form-control" %>
+                  <%= f.password_field :password, placeholder: "Password", class:"form-control" %>
+                  <%= f.submit "Login", class: "btn btn-xs btn-primary form-control" %><br>
+                <h6><%= link_to "Forgot Password?", new_password_path %> </h6>
                 <% end %>
               </div>
             </li>
@@ -58,8 +58,6 @@
 
 
 <%= yield %>
-
-<%= params.inspect %>
 
 
 </body>
