@@ -8,16 +8,24 @@
   <%= csrf_meta_tags %>
 
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
+  <link href='http://fonts.googleapis.com/css?family=Archivo+Narrow' rel='stylesheet' type='text/css'>
 
 
 </head>
 <body>
 
+ 
 <div class="container">
-	<nav class="navbar navbar-default" role="navigation">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/"><%= image_tag "logo_TextMeMaybe.png", id: "logoimg", style: " width:30px; padding-bottom:0px;"%></a>
+  <nav class="navbar navbar-default" role="navigation">
+
+    <div class="nav navbar-header">
+      <a class="navbar-brand" id="home" href="/">
+        <%= image_tag "logo_TextMeMaybe.png", id: "logoimg"%>
+        Hello</a>
     </div>
+
 	    <ul class="nav navbar-nav">
         <li class="active"><a href="/about">About</a></li>
         <li><a href="/users">Friends</a></li>
@@ -38,10 +46,10 @@
               <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                   <!-- Login form here -->
                   <%= form_for :user, :url => login_path do |f| %>
-                  <%= f.text_field :email, placeholder: "Enter your email" %> <br><br>
-                  <%= f.password_field :password, placeholder: "Password" %><br><br>
-                  <%= f.submit "Login", class: "btn btn-large btn-primary" %><br>
-                <h4> <%= link_to "Forgot Password?", new_password_path %> </h4>
+                  <%= f.text_field :email, placeholder: "Email", class:"form-control" %>
+                  <%= f.password_field :password, placeholder: "Password", class:"form-control" %>
+                  <%= f.submit "Login", class: "btn btn-xs btn-primary form-control" %><br>
+                <h6><%= link_to "Forgot Password?", new_password_path %> </h6>
                 <% end %>
               </div>
             </li>
@@ -52,13 +60,14 @@
           <% end %>
       </ul>
 	</nav>
-</div>
-
-
+<!-- <div class="container"> -->
 <%= yield %>
-
-<%= params.inspect %>
-
-
+  <div class="container">
+<hr>
+    <div class="footer">
+        <p>&copy; Text Me Maybe 2014</p>
+      </div>
+    </div>
+<!-- </div> -->
 </body>
 </html>

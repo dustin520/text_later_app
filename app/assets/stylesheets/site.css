@@ -1,9 +1,92 @@
-.modal-body{
-	
+*, div {
+	/*border: 1px solid #f0f;*/
+
 }
 
-
+body {
+	padding-top: 20px;
+}
+/*For Scheduled Dates*/
 .form_element{
 	font-size: 20px;
 }
+
+/*1/3 HOMEPAGE BEGINS*/
+
+/*For Top Background Image*/
+#topbackground{
+  background:url('http://cdn.pencilscoop.netdna-cdn.com/wp-content/uploads/2013/12/blurred_background_1.jpg');
+  height: 500px;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+
+/*.navbar-inverse {
+	background-color: transparent;
+	background: transparent;
+	border-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: black;
+	font-size: 20px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	border-bottom: 2px solid #fff;
+}
+*/
+
+
+/*For the Tag Line*/
+#toprow{
+	padding-top: 75px;
+}
+
+#mobilephone{
+	padding-top: 100px;
+}
+
+#tagbox{
+	padding-top: 150px;
+	padding-right: 50px;
+}
+
+#tag{
+	color: #33536d;
+	font-size: 30px;
+	font-family:Open Sans,'Karla', sans-serif;	
+}
+
+#tagbox a{
+	color:white;
+}
+
+#tagbox a:hover{
+	color:white;
+}
+
+#learn-more{
+	text-decoration: none;
+	font-size: 14px;
+	color:#91a8ba;
+}
+
+#linktosignup{
+	text-decoration: none;
+}
+
+.navbar-brand img {
+	height: 100%;
+}
+
+
+
+
+
+
+/*1/3 HOMEPAGE ENDS*/
 
