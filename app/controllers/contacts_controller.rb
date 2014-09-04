@@ -1,34 +1,44 @@
 class ContactsController < ApplicationController
 
   def index
-    session_id = session[ :user_id ]
-    route_id   = params[ :user_id ]
+    find_user_id
+    if session[:user_id] == @user.id
+      session_id = session[ :user_id ]
+      route_id   = params[ :user_id ]
 
-    if session_id.to_i == route_id.to_i
-      user_id = params[:user_id]
-      @user = User.find_by_id(user_id)
-      @contacts = @user.contacts.all
-      user_name
-    end
+      if session_id.to_i == route_id.to_i
+        user_id = params[:user_id]
+        @user = User.find_by_id(user_id)
+        @contacts = @user.contacts.all
+        user_name
+      end
 
-    respond_to do |format|
-      format.html
-      format.json { render json: @contacts}
+      respond_to do |format|
+        format.html
+        format.json { render json: @contacts}
+      end
+    else
+      redirect_to '/'
     end
 
   end
 
   def new
-    session_id = session[ :user_id ]
-    route_id   = params[ :user_id ]
+    find_user_id
+    if session[:user_id] == @user.id
+      session_id = session[ :user_id ]
+      route_id   = params[ :user_id ]
 
-    if session_id.to_i == route_id.to_i
-      user_id = params[:user_id]
-      @user = User.find_by_id(user_id)
-      @contact = @user.contacts.new
-      user_name
+      if session_id.to_i == route_id.to_i
+        user_id = params[:user_id]
+        @user = User.find_by_id(user_id)
+        @contact = @user.contacts.new
+        user_name
+      else
+        redirect_to user_contacts_path(session_id)
+      end
     else
-      redirect_to user_contacts_path(session_id)
+      redirect_to '/'
     end
     
   end
