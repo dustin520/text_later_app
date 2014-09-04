@@ -1,33 +1,44 @@
 class SavedMsgsController < ApplicationController
 
 	def index
-		session_id = session[ :user_id ]
-		route_id   = params[ :user_id ]
-		
-		if session_id.to_i == route_id.to_i
-			find_user_id
-			@savedMsg = @user.saved_msgs.all
-			@savedMsgs = @user.saved_msgs.new
-			user_name
+		find_user_id
+		if session[:user_id] == @user.id
+			session_id = session[ :user_id ]
+			route_id   = params[ :user_id ]
+			
+			if session_id.to_i == route_id.to_i
+				find_user_id
+				@savedMsg = @user.saved_msgs.all
+				@savedMsgs = @user.saved_msgs.new
+				user_name
+			else
+				redirect_to user_saved_msgs_path(session_id) 
+			end
 		else
-			redirect_to user_saved_msgs_path(session_id) 
+			redirect_to '/'
 		end
 	end
 
 	def new
-		session_id = session[ :user_id ]
-		route_id   = params[ :user_id ]
-		
-		if session_id.to_i == route_id.to_i
-			find_user_id
-			@savedMsg = @user.saved_msgs.new
-			user_name
+		find_user_id
+		if session[:user_id] == @user.id
+			session_id = session[ :user_id ]
+			route_id   = params[ :user_id ]
+			
+			if session_id.to_i == route_id.to_i
+				find_user_id
+				@savedMsg = @user.saved_msgs.new
+				user_name
+			else
+				redirect_to new_user_saved_msg_path(session_id)
+			end
 		else
-			redirect_to new_user_saved_msg_path(session_id)
+			redirect_to '/'
 		end
 	end
 
 	def create
+
 		session_id = session[ :user_id ]
 		route_id   = params[ :user_id ]
 		
@@ -62,47 +73,28 @@ class SavedMsgsController < ApplicationController
 				# render plain: "Your message was sent!"
 				redirect_to user_saved_msgs_path(session_id)
 			end
-
-
-		# # Twilio Magic w/o Sidekiq/Redis - MULITIPLE RECIPIENTS WORKING
-		# 	sender = "+14154888381"
-		# 	receiver = new_msg[:send_num]
-		# 	content = new_msg[:content]
-
-		# 	# api_info
-		# 	account_sid = ENV['TWILIO_SID']
-		# 	auth_token = ENV['TWILIO_AUTH']
-
-		# 	# Multiple Recipients
-		# 	friends = new_msg[:send_num].split(",")
-
-		# 	# binding.pry
-		# 	friends.each do |friend|
-		# 		@client = Twilio::REST::Client.new account_sid, auth_token
-		# 		message = @client.account.messages.create(
-		# 		    :from => sender,
-		# 		    :to => friend,     # Replace with your phone number
-		# 		    :body => content)   # Replace with your Twilio number
-		# 			p message.sid
-		# 	end # twilio magic ends 
-		# 	redirect_to user_saved_msgs_path
-
 		else
 			# redirect_to new_user_saved_msg_path(session_id)
 		end
+
 	end
 
 	def show
-		session_id = session[ :user_id ]
-		route_id   = params[ :user_id ]
-		
-		if session_id.to_i == route_id.to_i		
-			find_user_id
-			savedMsg_id = params[:id]
-			@savedMsg = @user.saved_msgs.find(savedMsg_id)
-			user_name
+		find_user_id
+		if session[:user_id] == @user.id
+			session_id = session[ :user_id ]
+			route_id   = params[ :user_id ]
+			
+			if session_id.to_i == route_id.to_i		
+				find_user_id
+				savedMsg_id = params[:id]
+				@savedMsg = @user.saved_msgs.find(savedMsg_id)
+				user_name
+			else
+				redirect_to user_saved_msgs_path(session_id) 
+			end
 		else
-			redirect_to user_saved_msgs_path(session_id) 
+			redirect_to '/'
 		end
 	end
 

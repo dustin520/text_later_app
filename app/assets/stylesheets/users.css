@@ -23,7 +23,8 @@ a {
 #signupModal {
   padding-top: 10px;
   padding-bottom: 40px;
-  background: url('blurbg.jpg') top center no-repeat fixed;
+  /*background: url('blurbg.jpg') top center no-repeat fixed;*/
+  background-color: #cfd8dc;
   -webkit-background-size: cover; /* Safari en Chrome */
   -moz-background-size: cover; /*  Old Firefox */
   -o-background-size: cover; /* Opera */
