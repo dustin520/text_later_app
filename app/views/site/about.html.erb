@@ -1,16 +1,35 @@
+
+<style>
+	canvas {
+	width: 450;
+	height: 200;
+	border: 1px solid black;
+	text-align: center;
+	margin-top: 23px;
+}
+</style>
+
+
 <div class="container">
 	
 	<h1 class="">About Text Me Maybe</h1>
 
-		<div class="col-md-offset-4 col-md-6">
-			<h2 class="text-center">What We're All About</h2>
-			<p class="text-center">“When you learn through coding, [you're] coding to learn. You're learning it in a meaningful context, and that's the best way of learning things.” — Mitch ResnickLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</div>
+		<section class="top col-md-12">
+			<div class="canvas col-md-4">
+				<canvas id="canvas" width = "450" height="200"></canvas>
+			</div>
+
+			<div class="col-md-offset-2 col-md-6 text-center">
+				<h2 class="text-center">What We're All About</h2>
+				<p class="text-center">“When you learn through coding, [you're] coding to learn. You're learning it in a meaningful context, and that's the best way of learning things.” — Mitch Resnick</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</section>
 		
 
 
@@ -52,3 +71,75 @@
 		</div>
 
 </div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(function () {
+
+});
+
+function draw() {
+	var canvas = document.getElementById("canvas");
+
+	var img = new Image();
+
+	// User Variables - customize these to change the image being scrolled, its
+	// direction, and the speed.
+
+	img.src = 'https://camo.githubusercontent.com/2c3691371a4fdaea93e28b44508bb716fe203aa7/68747470733a2f2f7261772e6769746875622e636f6d2f626f6265662f436f6c6f72536368656d65456469746f722d5354322f6d61737465722f73637265656e73686f74732f73637265656e312e706e67';
+	var CanvasXSize = 450;
+	var CanvasYSize = 200;
+	var speed = 30; //lower is faster
+	var scale = 1.05;
+	var y = -4.5; //vertical offset
+
+	// Main program
+
+	var dx = 0.75;
+	var imgW;
+	var imgH;
+	var x = 0;
+	var clearX;
+	var clearY;
+	var ctx;
+
+	img.onload = function() {
+	    imgW = img.width*scale;
+	    imgH = img.height*scale;
+	    if (imgW > CanvasXSize) { x = CanvasXSize-imgW; } // image larger than canvas
+	    if (imgW > CanvasXSize) { clearX = imgW; } // image larger than canvas
+	    else { clearX = CanvasXSize; }
+	    if (imgH > CanvasYSize) { clearY = imgH; } // image larger than canvas
+	    else { clearY = CanvasYSize; }
+	    //Get Canvas Element
+	    ctx = document.getElementById('canvas').getContext('2d');
+	    //Set Refresh Rate
+	    return setInterval(draw, speed);
+	}
+
+	function draw() {
+	    //Clear Canvas
+	    ctx.clearRect(0,0,clearX,clearY);
+	    //If image is <= Canvas Size
+	    if (imgW <= CanvasXSize) {
+	        //reset, start from beginning
+	        if (x > (CanvasXSize)) { x = 0; }
+	        //draw aditional image
+	        if (x > (CanvasXSize-imgW)) { ctx.drawImage(img,x-CanvasXSize+1,y,imgW,imgH); }
+	    }
+	    //If image is > Canvas Size
+	    else {
+	        //reset, start from beginning
+	        if (x > (CanvasXSize)) { x = CanvasXSize-imgW; }
+	        //draw aditional image
+	        if (x > (CanvasXSize-imgW)) { ctx.drawImage(img,x-imgW+1,y,imgW,imgH); }
+	    }
+	    //draw image
+	    ctx.drawImage(img,x,y,imgW,imgH);
+	    //amount to move
+	    x += dx;
+	}
+
+}
+</script>

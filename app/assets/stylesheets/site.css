@@ -15,12 +15,12 @@ body {
 
 /*For Top Background Image*/
 #topbackground{
-  background:url('http://cdn.pencilscoop.netdna-cdn.com/wp-content/uploads/2013/12/blurred_background_1.jpg');
-  height: 500px;
+  /*background:url('http://ak.picdn.net/shutterstock/videos/5908742/preview/stock-footage-woman-texting-sending-sms-on-smartphone-in-bar.jpg') 0 -150px;*/
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+
 }
 
 
@@ -57,7 +57,10 @@ body {
 
 #tag{
 	color: #33536d;
-	font-size: 30px;
+	/*color: white;*/
+
+/*	font-size: 30px;
+*/	font-weight: bold;
 	font-family:Open Sans,'Karla', sans-serif;	
 }
 
@@ -76,16 +79,38 @@ body {
 }
 
 #linktosignup{
-	text-decoration: none;
+text-decoration: none;
 }
 
 .navbar-brand img {
-	height: 100%;
+height: 100%;
 }
 
+#jumboimg {
+width:100%;
+}
 
+/*For Middle Section Images*/
+#middle-images{
+    height:260px;
+    width:400px;
+    overflow:hidden;
+    border-radius:10px;
+    margin: auto;
+    padding: 25px 0px 25px 0px;
+    padding-left: 50px;
+    text-align: center;
+    float: center;
+}
 
+#middle-section{
+	background-color: #C9D5DE;
+}
 
+.featurette-divider{
+	margin: 0px;
+	padding: 0px;
+}
 
 
 /*1/3 HOMEPAGE ENDS*/

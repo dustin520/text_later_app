@@ -57,3 +57,7 @@ gem 'redis'
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'time_difference'
+
+
+# For scrape quotes
+gem 'nokogiri', '~> 1.6.3.1'

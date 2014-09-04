@@ -1,19 +1,78 @@
 <div class="jumbotron" id="topbackground">
 
-	<div class="container">
-			<div class="row">
+<div class="container">
+<div class="row">
 
-			<div class="col-md-6 text-center">
-				<%= image_tag "logo_TextMeMaybe.png", id: "logoimg", style: " width:150px; border:50px; "%>
+<div class="col-xs-4 text-center">
+<%= image_tag "logo_TextMeMaybe.png", id: "jumboimg"%>
 
-				<h1 id="tag">Your texts, anytime</h1>
-				<button class="btn btn-info" id="linktosignup"><a href="/signup">Sign Up</a></button>
-			</div>
+</div>
 
-		<div class="col-md-6">		
-		</div>
+<div class="col-xs-8"> 
+
+<h1 id="tag">Your texts, anytime</h1>
+<p>Never forget to send a text again</p>
+<a href="/signup" class="btn btn-lg btn-success">Sign Up</a>
+</div>
 
 
+
+</div>  <!-- row close -->
+
+
+</div>  <!-- container close -->
+
+</div>
+
+
+<div class="text-center" id="learn-more">
+Learn more  <i class="fa fa-sort-desc fa-2x"></i>
+</div>
+
+<hr class="featurette-divider">
+<!-- 1/3 Home PAGE ENDs -->
+<div id="middle-section"><br/><br/><br/>
+<div class="container">
+    <div class="col-md-6">
+
+		<h1 id="tag">Belated, No More</h1>
+		<h4>Be the person who always remembers and </h4>
+		<h4>never forgets to tell mom that you love her on her birthday.</h4>
+
+    </div>
+
+  <div class="col-md-6">
+          <%= image_tag "mom_text_xsml.png", id: "middle-images" %>
+  </div>
+
+</div><br/><br/><br/>
+
+
+<div class="container">
+    <div class="col-md-6">
+          <%= image_tag "ontime_onschedule_xsml.png", id: "middle-images" %>
+    </div>
+
+  	<div class="col-md-6">
+		<h1 id="tag">On Time, On Schedule</h1>
+		<h4>Be the one who keeps the pack on time and on schedule.</h4>
+		<h4>Schedule your texts in advance to remind them later.</h4>
+	</div>			
+</div><br/><br/><br/>
+
+<div class="container">
+    <div class="col-md-6">
+		<h1 id="tag">Gets there when you want it...</h1>
+		<h4>Send your text now and deliver it later.</h4>
+    </div>
+
+	<div class="col-md-6">
+        <%= image_tag "envelope_xsml.png", id: "middle-images" %>
+	</div>
+</div><br/><br/><br/>
+
+</div>
+<!-- 2/3 Home PAGE ENDs -->
 
 		</div>  <!-- row close -->
 		
@@ -22,6 +81,12 @@
 
 </div>
 
+
+	<%= render "shared/unsaved_form" %>
+
+
+	<!-- Need to hide this later -->
+	<p><%= link_to 'Monitoring Workers', sidekiq_web_path %></p>
 
 			<div class="text-center" id="learn-more">
 				Learn more  <i class="fa fa-sort-desc fa-2x"></i>
