@@ -26,22 +26,16 @@ $(document).ready(function(){
 		$(".content-body").val("Walk the dog.")
 	})
 
-	// var getMsgTime = function () {
-	// 	return [
-	// 		$("#unsaved_msg_time_1i").val(),
-	// 		"-"
-	// 	 	$("#unsaved_msg_time_2i").val(),
-	// 	 	":"
-	// 	 	$("#unsaved_msg_time_3i").val(),
-	// 	 	$("#unsaved_msg_time_4i").val(),
-	// 	 	$("#unsaved_msg_time_5i").val()
-	// 	].join("")
-	// }
+	// When click on Try It Button
+	$("#tryItOut").on("click", function(){
+		$("#sent").hide()
+		$("#form").show()
+	})
+
 
 	$("#unsavebutton").on("click", function(e){
 		e.preventDefault();
-		var btn = $(this)
-		btn.button('loading')
+		
 
 		console.log("Form is submitting...")
 
@@ -64,7 +58,7 @@ $(document).ready(function(){
 				$("#sent").show()
 			})
 
-			
+
 
 	})
 
