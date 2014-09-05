@@ -3,7 +3,8 @@ $(document).ready(function(){
 	$("#sent").hide()
 
 	$(".yobutton").on("click", function(){
-		$(".content-body").val("Don't forget to come to Cameron's Potluck!  Bring your food!");
+		$(".content-body").val("Don't forget to come to Cameron's Potluck at 1:00pm!  Bring your food!");
+		$("#unsaved_msg_send_num").val("3238068310,7148569423,5163769388,4152987707,4156086603,4155040175,7758578354,9043149719,4805409085,8189877898,9258587492,4088387835,4152729003,4153750441,4152463234,4153054021,4158465918,6505337957,7752534158,4012155548,5107594556,6507044251,5102094735")
 	})
 
 	$(".birthdaybutton").on("click", function(){
