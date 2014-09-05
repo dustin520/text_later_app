@@ -13,7 +13,6 @@ a {
 	max-width: 400px;
 	max-height: 600px;
 	padding: 15px;
-/*	margin-right: 60px;*/
 	position: center;
 	top:5%;
 	left:15%;
@@ -23,10 +22,9 @@ a {
 #signupModal {
   padding-top: 10px;
   padding-bottom: 40px;
-  /*background: url('blurbg.jpg') top center no-repeat fixed;*/
   background-color: #cfd8dc;
-  -webkit-background-size: cover; /* Safari en Chrome */
-  -moz-background-size: cover; /*  Old Firefox */
-  -o-background-size: cover; /* Opera */
-  background-size: cover; /* W3C */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
