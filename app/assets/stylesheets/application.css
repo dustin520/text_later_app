@@ -14,5 +14,7 @@
  *= require site
  *= require users
  *= require session
+ *= require password 
  *= require_self
  */
+

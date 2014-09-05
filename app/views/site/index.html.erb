@@ -113,7 +113,7 @@
 
 <!-- 3/3 HOME PAGE BEGINS  -->
 
-<div class="container">
+<div class="container" id="bottomContainer" >
 	<div class="row">
 		<div class="stepOne col-md-4 text-center">
 			<%= image_tag "signupPhoto.jpg", id: "tutorial", class: "img-circle", style: "height:250px; width:250px" %>
@@ -129,6 +129,7 @@
 		</div>
 	</div> <!-- row close -->
 </div> <!-- container close -->
+
 
 <br><br>
 	<% if session[:user_id]	== nil %>	
