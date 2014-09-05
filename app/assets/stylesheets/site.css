@@ -122,15 +122,16 @@ a#joinUs {
 }
 
 div.important-box {
-<<<<<<< HEAD
+
 	/*border: 1px solid;*/
 }
 
 .tech {
-	font-size: 20px;
+	font-size: 18px;
+	list-style-type: none;
 }
 
 
 =======
 }
->>>>>>> 93a92f1140fd75cd3b5169d08c0b50264b860c19
+

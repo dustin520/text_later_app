@@ -12,28 +12,34 @@
             <div class="form-group">
           		
           		<br>
-          		<h2> Login </h2>
 
-							<% flash.each do |k,v| %>
-								<p class "text-danger" id ="<%= k %>"><%= v %></p>
-							<% end %>
+          			<div class="row">
+          				
+		          		<h2 class="form-group text-center">  </h2>
 
-						<%= form_for :user do |f| %>
-						<div class="form-group">
-							<%= f.text_field :email, placeholder: "Enter your email", class: "form-control input-sm", autofocus: true  %>
-						</div>
-							
-						<div class="form-group">
-							<%= f.password_field :password, placeholder: "Password", class: "form-control input-sm" %>
-						</div>
-								
-							<div class="modal-footer">
-							<%= f.submit "Login", class: "btn btn-md btn-primary form-control" %><br/>
-							</div>
-            	<% end %>
-          	</div>
+									<% flash.each do |k,v| %>
+										<p class "text-danger" id ="<%= k %>"><%= v %></p>
+									<% end %>
+
+									<%= form_for :user do |f| %>
+										<div class="form-group text-center col-md-offset-2 col-md-8">
+											<%= f.text_field :email, placeholder: "Enter your email", class: "form-control input-sm", autofocus: true  %>
+										</div>
+										 
+										<div class="form-group text-center col-md-offset-2 col-md-8">
+											<%= f.password_field :password, placeholder: "Password", class: "form-control input-sm" %>
+										</div>
+											
+										<div class="">
+										<%= f.submit "Login", class: "btn btn-md btn-primary form-group col-md-offset-4 col-md-4" %><br/>
+										</div>
+			          	<% end %>
+
 						<h5 class="col-md-5"> <%= link_to "Forget Password?", new_password_path, class:"text-center" %> </h5>
-						<h5 class="col-md-offset-4 	col-md-2"><%= link_to "Go Home", root_url, class:"text-center" %></h5>
+						<h5 class="col-md-offset-5 	col-md-2"><%= link_to "Go Home", root_url, class:"text-center" %></h5>
+          			</div>
+          	</div>
+
 				</div>
   	</div>
   </div>

@@ -1,10 +1,11 @@
 
 <div class="container">
-	<div class='col-md-offset-4 col-md-4'>
+	<div class='row col-md-offset-4 col-md-4'>
 		<h1>Schedule a Text</h1>
 	</div>
 
 	<div class="row">
+
 
 		<%= form_for [@user, @savedMsg], :html => {:class => "newMsg"}  do |f| %>
 
@@ -15,12 +16,12 @@
 				<%= f.text_field :subject, placeholder: "Subject", class: 'form-control subject-body' %>
 			</div><br>
 			<div class='col-md-offset-3 col-md-6'>
-				<%= f.text_area :content, placeholder: "Message", class: 'form-control content-body' %>
-			</div><br>
-			<div class='col-md-offset-4 col-md-4 form_element_sav'>
+				<%= f.text_area :content, placeholder: "Message", class: 'form-control content-body' %><br>
+			</div>
+			<div class='col-md-offset-4 col-md-4 form_element_sav' style="font-size:1.15em">
 				<%= f.datetime_select :time, default: Time.now.utc.localtime, ampm: true, class: "time-body" %>
-			</div><br>
-			<div class='col-md-offset-3 col-md-6'>
+			</div>
+			<div class='col-md-offset-3 col-md-6'><br>
 				<button type="submit" id="textButton" data-loading-text="Sending..." class="btn btn-primary form-control">Text It
 				</button>
 			</div>
@@ -33,35 +34,28 @@
 
 	<hr class="featurette-divider"/><br>
 
-		<div class="col-xs-offset-3 col-xs-2 text-center">
-			<button class="alertSelf btn btn-lg">
+		<div class="col-xs-2 text-center">
+			<button class="alertSelf btn btn-md" id="self">
 				<h5>Me</h5>
 				<span style="display:none;" class="selfNum"><%= @user.phone_num %></span>
 			</button>
 		</div>
 
-	<div class="row">
+	<div class="row col-xs-offset-1 ">
 		<% @user.contacts.each do |contact| %>
-		<div class=" col-xs-2 text-center">
-			<button class="contacts btn btn-lg">
+		<div class=" col-xs-1 text-center">
+			<button class="contacts btn btn-md">
 				<h5><%= contact.first_name %></h5>
 				<span style ="display:none;" class ="phoneNum"><%= contact.phone_num %></span>
 			</button> 		
 		</div>
 		<% end %>
-	</div><br> <!-- Row Close -->
+	</div> <!-- Row Close -->
 
 	<!-- <hr class="featurette-divider"/><br>	 -->
 
 
 <!-- RENDER TIME TEMPLATE WHEN BUTTONS WORK -->
 
-
-
-
-	<hr class="featurette-divider"/><br>
-
-	<a href="/users/<%= @user.id %>", class: 'btn btn-primary'>User Page</a> 
-	<%= link_to "Saved Messages", user_saved_msgs_url %>
 
 </div>
