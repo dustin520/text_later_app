@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe UserMailer, :type => :mailer do
   describe "password_reset" do
     user = User.find_by_id(1)
+    user.set_password_reset
     let(:mail) { UserMailer.password_reset(user) }
 
     it "renders the headers" do
