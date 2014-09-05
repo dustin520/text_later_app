@@ -71,15 +71,15 @@ width:100%;
 }
 
 #middle-images{
-    height:260px;
-    width:400px;
+    height:325px;
+    width:475px;
     overflow:hidden;
-    border-radius:10%;
     margin: auto;
-    padding: 25px 0px 25px 0px;
-    padding-left: 50px;
+    padding: 0px 0px 0px 0px;
+    border-radius:5%;
     text-align: center;
     float: center;
+    box-shadow: 10px 10px 5px #888888;
 }
 
 #middle-section{
