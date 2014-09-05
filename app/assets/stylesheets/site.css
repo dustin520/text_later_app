@@ -1,5 +1,5 @@
 *, div {
-
+	/*border: 1px solid red;*/
 }
 
 body {
@@ -130,7 +130,7 @@ div.important-box {
 }
 
 .tech {
-	font-size: 18px;
+	font-size: 16px;
 	list-style-type: none;
 }
 
