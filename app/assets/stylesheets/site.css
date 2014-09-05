@@ -36,7 +36,11 @@ body {
 
 #tag{
 	color: #33536d;
+<<<<<<< HEAD
+	font-weight: bold;
+=======
 font-weight: bold;
+>>>>>>> 93a92f1140fd75cd3b5169d08c0b50264b860c19
 	font-family:Open Sans,'Karla', sans-serif;	
 }
 
@@ -118,4 +122,15 @@ a#joinUs {
 }
 
 div.important-box {
+<<<<<<< HEAD
+	/*border: 1px solid;*/
 }
+
+.tech {
+	font-size: 20px;
+}
+
+
+=======
+}
+>>>>>>> 93a92f1140fd75cd3b5169d08c0b50264b860c19
