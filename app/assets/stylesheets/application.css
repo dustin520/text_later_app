@@ -13,6 +13,6 @@
  *= require custom
  *= require site
  *= require users
-
+ *= require session
  *= require_self
  */

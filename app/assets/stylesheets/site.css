@@ -36,11 +36,9 @@ body {
 
 #tag{
 	color: #33536d;
-<<<<<<< HEAD
-	font-weight: bold;
-=======
+
 font-weight: bold;
->>>>>>> 93a92f1140fd75cd3b5169d08c0b50264b860c19
+
 	font-family:Open Sans,'Karla', sans-serif;	
 }
 
@@ -122,8 +120,8 @@ a#joinUs {
 }
 
 div.important-box {
-
 	/*border: 1px solid;*/
+
 }
 
 .tech {
@@ -131,7 +129,11 @@ div.important-box {
 	list-style-type: none;
 }
 
+#aboutwhy{
+	font-size: 20px;
+}
 
-=======
+#aboutus{
+	font-size: 16px;
 }
 
