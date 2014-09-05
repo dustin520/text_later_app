@@ -11,4 +11,8 @@
 
 button#temp:hover {
 	background-color: RGB(66, 139, 202);
-;
+}
+
+button#self:hover {
+	color: green;
+}

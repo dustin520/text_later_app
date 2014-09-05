@@ -3,16 +3,16 @@
 
 	<h1>Welcome to your Scheduled Messages!</h1>	
 	
+			<!-- Flash Messages -->
+			<% flash.each do |name, msg| %>
+				<h2 id="<%= name %>" style="color:red"><%= msg %></h2>
+			<% end %> 
 	<div class="row">
 		
 		<div class="col-md-4">
 			<h3>Hello <%= @user.first_name %>!</h3>
 		</div>
 
-			<!-- Flash Messages -->
-			<% flash.each do |name, msg| %>
-				<h2 id="<%= name %>" style="color:red"><%= msg %></h2>
-			<% end %> 
 
 		<div class="col-md-offset-5 col-md-2 savesend" style="padding-bottom:5px; margin-top:-10px">
 				<!-- Button trigger modal -->
@@ -30,6 +30,7 @@
 	  <!-- <li class="active"><a href="#">Home</a></li> -->
 
 			<th class="row info active">
+				<td><strong>SENT TO</strong></td>
 				<td><strong>SUBJECT</strong></td>
 				<td><strong>MESSAGE</strong></td>
 				<td><strong>CREATED</strong></td>
@@ -39,6 +40,7 @@
 
 			<% @savedMsg.each do |msg| %>
 				<tr class="row">
+					<td><%= msg.send_num %></td>
 					<td><%= msg.subject %></td>
 					<td><%= msg.content %></td>
 					<td><%= msg.created_at.strftime("%a %l:%m %P %-m/%d/%y") %></td>
