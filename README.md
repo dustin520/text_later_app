@@ -15,7 +15,7 @@ Our goal was to develop a functional app that would be utilized across populatio
 #####Views<br><br>
 ![alt text](app/assets/images/homepage_flow_min.jpg "Homepage Flow")<br>
 #####Homepage Flow<br><br>
-![alt text](app/assets/images/features_min.jpg "Features_min")<br>
+![alt text](app/assets/images/Features_min.jpg "Features_min")<br>
 #####Features<br><br>
 
 ##Technologies Used
