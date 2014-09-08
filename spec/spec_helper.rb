@@ -14,7 +14,13 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require "factory_girl_rails"
+
 RSpec.configure do |config|
+  config.include  FactoryGirl::Syntax::Methods
+  
+end
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
@@ -75,4 +81,4 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 =end
-end
+
