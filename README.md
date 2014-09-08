@@ -4,18 +4,18 @@
 Our goal was to develop a functional app that would be utilized across populations. If you've a use case that we have not yet identified, we'd love to hear about it!
 
 ##Deployed on Heroku
-![alt text](/Users/siejen/Documents/WDI/projects/grp_project_II/text_later_app/app/assets/images/TextMeMaybe_Screenshot_min.jpg "TextMeMaybe")<br>
+![alt text](app/assets/images/TextMeMaybe_Screenshot_min.jpg "TextMeMaybe")<br>
 [Check it Out](http://textmemaybe.heroku.com)<br>
 ##Wireframes and Users Stories
-![alt text](/Users/siejen/Documents/WDI/projects/grp_project_II/text_later_app/app/assets/images/Models_min.jpg "Models")<br>
+![alt text](app/assets/images/Models_min.jpg "Models")<br>
 #####Models<br><br>
-![alt text](/Users/siejen/Documents/WDI/projects/grp_project_II/text_later_app/app/assets/images/Models_Controllers_min.jpg "Models and Controllers")<br>
+![alt text](app/assets/images/Models_Controllers_min.jpg "Models and Controllers")<br>
 #####Models and Controllers<br><br>
-![alt text](/Users/siejen/Documents/WDI/projects/grp_project_II/text_later_app/app/assets/images/Views_min.jpg "Views")<br>
+![alt text](app/assets/images/Views_min.jpg "Views")<br>
 #####Views<br><br>
-![alt text](/Users/siejen/Documents/WDI/projects/grp_project_II/text_later_app/app/assets/images/homepage_flow_min.jpg "Homepage Flow")<br>
+![alt text](app/assets/images/homepage_flow_min.jpg "Homepage Flow")<br>
 #####Homepage Flow<br><br>
-![alt text](/Users/siejen/Documents/WDI/projects/grp_project_II/text_later_app/app/assets/images/features_min.jpg "Features_min")<br>
+![alt text](app/assets/images/features_min.jpg "Features_min")<br>
 #####Features<br><br>
 
 ##Technologies Used
