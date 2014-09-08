@@ -4,8 +4,8 @@ $(document).ready(function(){
 
 // Templates for Autofill Holiday Texts
 	$("#saved.yobutton").on("click", function(){
-		$(".content-body").val("Don't forget to come to Cameron's Potluck!  Bring your food!");
-		$(".subject-body").val("WDI Potluck");
+		$(".content-body").val("Yo!");
+		$(".subject-body").val("Yo!");
 	});
 
 	$("#saved.birthdaybutton").on("click", function(){
