@@ -21,10 +21,10 @@ class UnsavedMsgsController < ApplicationController
 		time = @text_message.time.utc
 		p "THE TIME TO SCHEDULE IS: #{time}"
 
-		start_time = Time.new(Time.now.year, Time.now.month,Time.now.day,Time.now.hour - 7, Time.now.min)
+		start_time = Time.new(Time.now.year, Time.now.month,Time.now.day,Time.now.hour, Time.now.min)
 		end_time = Time.new(time.year, time.month, time.day, time.hour, time.min)
-		send_at = TimeDifference.between(start_time, end_time).in_minutes
-		p send_at
+		send_at = TimeDifference.between(start_time, end_time).in_minutes - 420
+
 			
 		TwilioWorker.perform_at(send_at.minutes.from_now, @text_message.id)
 		
