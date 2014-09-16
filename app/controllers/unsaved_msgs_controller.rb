@@ -23,7 +23,8 @@ class UnsavedMsgsController < ApplicationController
 
 		start_time = Time.new(Time.now.year, Time.now.month,Time.now.day,Time.now.hour, Time.now.min)
 		end_time = Time.new(time.year, time.month, time.day, time.hour, time.min)
-		send_at = TimeDifference.between(start_time, end_time).in_minutes
+		send_at = TimeDifference.between(start_time, end_time).in_minutes - 420
+		p send_at
 			
 		TwilioWorker.perform_at(send_at.minutes.from_now, @text_message.id)
 		
