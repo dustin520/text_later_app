@@ -29,7 +29,7 @@
 							<%= f.telephone_field :send_num, placeholder: "Send To", class: "form-control text-center" %>
 							<%= f.text_field :content, placeholder: "Message", class: "content-body form-control text-center" %>
 							<span class="form_element" id="date">
-								<%= f.datetime_select :time, default: Time.now.utc.localtime, ampm: true %>
+								<%= f.datetime_select :time, default: Time.now, ampm: true %>
 							</span>
 				      <div class="modal-footer">
 				      <button type="submit" id="unsavebutton" data-loading-text="Sending..." class="btn btn-primary form-control">

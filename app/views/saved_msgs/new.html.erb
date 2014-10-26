@@ -19,7 +19,7 @@
 				<%= f.text_area :content, placeholder: "Message", class: 'form-control content-body' %><br>
 			</div>
 			<div class='col-md-offset-4 col-md-4 form_element_sav' style="font-size:1.15em">
-				<%= f.datetime_select :time, default: Time.now.utc.localtime, ampm: true, class: "time-body" %>
+				<%= f.datetime_select :time, default: Time.now.utc, ampm: true, class: "time-body" %>
 			</div>
 			<div class='col-md-offset-3 col-md-6'><br>
 				<button type="submit" id="textButton" data-loading-text="Sending..." class="btn btn-primary form-control">Text It
